@@ -3,8 +3,9 @@
 ## Preview
 
 <div>
-    <img src="https://github.com/BE-SOPT-28th-Android-SongShinGwanHan/HunKiSong_Assignment/blob/master/1%EC%B0%A8%EA%B3%BC%EC%A0%9C.gif " width="300" height="650"/>
+    <img src="https://github.com/BE-SOPT-28th-Android-SongShinGwanHan/IWantToBeMVP/blob/hunki/first_assignment/1%EC%B0%A8%EA%B3%BC%EC%A0%9C.gif" width="300" height="650"/>
 </div>
+
 
 ## 내용
 
@@ -66,6 +67,7 @@ override fun onDestroy() {
 ```
 
 <div>
-    <img src="https://github.com/BE-SOPT-28th-Android-SongShinGwanHan/IWantToBeMVP/blob/master/%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%20%EB%A1%9C%EA%B7%B8.PNG" width="300" height="300"
+    <img src="https://github.com/BE-SOPT-28th-Android-SongShinGwanHan/IWantToBeMVP/blob/hunki/first_assignment/%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%20%EB%A1%9C%EA%B7%B8.PNG" width="300" height="300"
 </div>
+
 
