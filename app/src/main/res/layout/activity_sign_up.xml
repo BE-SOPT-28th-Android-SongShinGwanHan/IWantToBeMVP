@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.activity.SignUpActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/sign_up_name_edit_text_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/sign_up_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sign_up_name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/sign_up_id_edit_text_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/sign_id_text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintStart_toStartOf="@id/sign_up_name_edit_text_field"
+        app:layout_constraintEnd_toEndOf="@id/sign_up_name_edit_text_field"
+        app:layout_constraintTop_toBottomOf="@id/sign_up_name_edit_text_field">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sign_up_id_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/sign_up_password_edit_text_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/sign_password_text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintStart_toStartOf="@id/sign_up_name_edit_text_field"
+        app:layout_constraintEnd_toEndOf="@id/sign_up_name_edit_text_field"
+        app:layout_constraintTop_toBottomOf="@id/sign_up_id_edit_text_field">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sign_up_password_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/sign_up_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up_button_text"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="@id/sign_up_name_edit_text_field"
+        app:layout_constraintEnd_toEndOf="@id/sign_up_name_edit_text_field"
+        app:layout_constraintTop_toBottomOf="@id/sign_up_password_edit_text_field" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
