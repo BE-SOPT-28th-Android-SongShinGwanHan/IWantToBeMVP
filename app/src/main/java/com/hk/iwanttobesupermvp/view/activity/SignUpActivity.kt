@@ -30,11 +30,6 @@ class SignUpActivity : AppCompatActivity(), SignUpContract.SignUpView {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        signUpPresenter.onDestroy()
-    }
-
     override fun getSignUpUserInfo(): SignUpUser = SignUpUser(
         binding.signUpNameEditText.text.toString(),
         binding.signUpIdEditText.text.toString(),

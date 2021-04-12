@@ -19,7 +19,5 @@ interface SignUpContract {
 
     interface SignUpPresenter {
         fun onSignUpButtonClick()
-
-        fun onDestroy()
     }
 }

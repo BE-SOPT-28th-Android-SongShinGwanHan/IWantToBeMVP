@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.hk.iwanttobesupermvp.contract.signin.SignInContract
 import com.hk.iwanttobesupermvp.databinding.ActivitySignInBinding
 import com.hk.iwanttobesupermvp.domain.User
-import com.hk.iwanttobesupermvp.model.SignInModel
 import com.hk.iwanttobesupermvp.presenter.signin.SignInPresenter
 import com.hk.iwanttobesupermvp.util.shortToast
 import com.hk.iwanttobesupermvp.view.activity.contract.SignUpActivityContract
@@ -43,11 +42,6 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
         binding.signInMoveSignUpText.setOnClickListener {
             signInPresenter.onSignUpTextClick()
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        signInPresenter.onDestroy()
     }
 
     override fun getUserStatus(): User = User(

@@ -21,11 +21,11 @@ import dagger.hilt.android.components.ActivityComponent
 @InstallIn(ActivityComponent::class)
 abstract class SignInModule {
     @Binds
-    abstract fun bindActivity(activity :SignInActivity): SignInContract.SignInView
+    abstract fun bindActivity(activity: SignInActivity): SignInContract.SignInView
 
     @Binds
-    abstract fun bindModel(model : SignInModel) : SignInContract.SignInModel
+    abstract fun bindModel(model: SignInModel): SignInContract.SignInModel
 
     @Binds
-    abstract fun bindPresenter(signInPresenter: SignInPresenter) : SignInContract.SignInPresenter
+    abstract fun bindPresenter(signInPresenter: SignInPresenter): SignInContract.SignInPresenter
 }

@@ -4,24 +4,19 @@ import com.hk.iwanttobesupermvp.contract.signin.SignInContract
 import javax.inject.Inject
 
 class SignInPresenter @Inject constructor(
-    private var signInView: SignInContract.SignInView?,
+    private var signInView: SignInContract.SignInView,
     private val signInModel: SignInContract.SignInModel
 ) : SignInContract.SignInPresenter {
     override fun onLoginButtonClick() {
-        signInView?.getUserStatus()?.let { signInModel.setUserInfo(it) }
+        signInView.getUserStatus().let { signInModel.setUserInfo(it) }
         if (signInModel.isValidate()) {
-            signInView?.navigateToHome()
+            signInView.navigateToHome()
         } else {
-            signInView?.showToast(message = "아이디 혹은 비밀번호를 입력하세요.")
+            signInView.showToast(message = "아이디 혹은 비밀번호를 입력하세요.")
         }
     }
 
     override fun onSignUpTextClick() {
-        signInView?.navigateToSignUpPage()
+        signInView.navigateToSignUpPage()
     }
-
-    override fun onDestroy() {
-        signInView = null
-    }
-
 }

@@ -8,7 +8,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
 
-// activity를 결국에는 주입을 해줘야 함
 @Module
 @InstallIn(ActivityComponent::class)
 object ViewModule {
@@ -16,5 +15,5 @@ object ViewModule {
     fun provideSignUpActivity(activity: Activity): SignUpActivity = activity as SignUpActivity
 
     @Provides
-    fun provideSignInActivity(activity : Activity) : SignInActivity = activity as SignInActivity
+    fun provideSignInActivity(activity: Activity): SignInActivity = activity as SignInActivity
 }

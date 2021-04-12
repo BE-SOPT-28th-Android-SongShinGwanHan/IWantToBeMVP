@@ -29,7 +29,5 @@ interface SignInContract {
         fun onLoginButtonClick()
 
         fun onSignUpTextClick()
-
-        fun onDestroy()
     }
 }

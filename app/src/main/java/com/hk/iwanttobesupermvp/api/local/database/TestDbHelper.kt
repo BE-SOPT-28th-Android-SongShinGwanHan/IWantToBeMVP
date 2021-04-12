@@ -1,4 +1,4 @@
-package com.hk.iwanttobesupermvp.api.local.sqlite.databasehelper
+package com.hk.iwanttobesupermvp.api.local.database
 
 import android.content.ContentValues
 import android.content.Context
@@ -19,7 +19,9 @@ class TestDbHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         val CREATE_PRODUCTS_TABLE = ("CREATE TABLE " +
                 TABLE_NAME + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY," +
-                COLUMN_NAME
+                COLUMN_USER_NAME + "," +
+                COLUMN_USER_GITHUB_ID + "," +
+                COLUMN_PASSWORD
                 + " TEXT" + ")")
         db?.execSQL(CREATE_PRODUCTS_TABLE)
     }
@@ -29,12 +31,12 @@ class TestDbHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         onCreate(db)
     }
 
+    // Database CRUD
     fun insertUser(user: DatabaseUser) {
         val values = ContentValues()
-        values.put(COLUMN_NAME, user.name)
+        putUser(values, user)
         val db = this.writableDatabase
         db.insert(TABLE_NAME, null, values)
-        /*db.close()*/
     }
 
     fun getAllUser(): Cursor? {
@@ -42,11 +44,19 @@ class TestDbHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         return db.rawQuery("SELECT * FROM $TABLE_NAME", null)
     }
 
+    private fun putUser(values: ContentValues, user: DatabaseUser) {
+        values.put(COLUMN_USER_NAME, user.name)
+        values.put(COLUMN_USER_GITHUB_ID, user.githubId)
+        values.put(COLUMN_PASSWORD, user.password)
+    }
+
     // 스키마
     // SQL 데이터베이스의 기본 원칙 중 하나
     companion object {
         const val TABLE_NAME = "user"
         const val COLUMN_ID = "_id"
-        const val COLUMN_NAME = "usersName"
+        const val COLUMN_USER_NAME = "usersName"
+        const val COLUMN_USER_GITHUB_ID = "githubId"
+        const val COLUMN_PASSWORD = "password"
     }
 }
