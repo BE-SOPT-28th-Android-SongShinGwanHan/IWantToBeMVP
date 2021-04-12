@@ -11,12 +11,15 @@ import com.hk.iwanttobesupermvp.presenter.signin.SignInPresenter
 import com.hk.iwanttobesupermvp.util.shortToast
 import com.hk.iwanttobesupermvp.view.activity.contract.SignUpActivityContract
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
 
     private lateinit var binding: ActivitySignInBinding
-    private lateinit var signInPresenter: SignInPresenter
+
+    @Inject
+    lateinit var signInPresenter: SignInPresenter
 
     // 다른 액티비티를 실행할때 특정 값을 가지고 시작을 해야될 경우엔 ,launcher 객체의 제네릭에 담아서
     // 특정 값을 가지지 않아도 될 경우에는 타입추론으로 해결가능
@@ -33,8 +36,6 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        signInPresenter = SignInPresenter(this, SignInModel())
 
         binding.signInLoginButton.setOnClickListener {
             signInPresenter.onLoginButtonClick()

@@ -1,8 +1,9 @@
 package com.hk.iwanttobesupermvp.presenter.signin
 
 import com.hk.iwanttobesupermvp.contract.signin.SignInContract
+import javax.inject.Inject
 
-class SignInPresenter(
+class SignInPresenter @Inject constructor(
     private var signInView: SignInContract.SignInView?,
     private val signInModel: SignInContract.SignInModel
 ) : SignInContract.SignInPresenter {
