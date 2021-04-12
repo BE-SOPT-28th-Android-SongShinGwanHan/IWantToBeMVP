@@ -3,7 +3,7 @@ package com.hk.iwanttobesupermvp.di
 import com.hk.iwanttobesupermvp.contract.signin.SignInContract
 import com.hk.iwanttobesupermvp.model.SignInModel
 import com.hk.iwanttobesupermvp.presenter.signin.SignInPresenter
-import com.hk.iwanttobesupermvp.view.activity.SignInActivity
+import com.hk.iwanttobesupermvp.ui.activity.SignInActivity
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

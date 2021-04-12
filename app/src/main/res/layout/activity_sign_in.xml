@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.SignInActivity">
+    tools:context=".ui.activity.SignInActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/sign_in_id_edit_text_field"

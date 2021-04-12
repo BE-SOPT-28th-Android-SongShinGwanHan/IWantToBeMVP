@@ -1,4 +1,4 @@
-package com.hk.iwanttobesupermvp.view.activity.contract
+package com.hk.iwanttobesupermvp.ui.activity.contract
 
 import android.app.Activity
 import android.content.Context

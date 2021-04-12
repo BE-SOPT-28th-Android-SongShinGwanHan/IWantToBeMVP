@@ -1,4 +1,4 @@
-package com.hk.iwanttobesupermvp.view.activity
+package com.hk.iwanttobesupermvp.ui.activity
 
 import android.content.Intent
 import android.os.Bundle

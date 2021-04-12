@@ -1,4 +1,4 @@
-package com.hk.iwanttobesupermvp.view.activity
+package com.hk.iwanttobesupermvp.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

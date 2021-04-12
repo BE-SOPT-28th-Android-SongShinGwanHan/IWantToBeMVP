@@ -1,4 +1,4 @@
-package com.hk.iwanttobesupermvp.view.activity
+package com.hk.iwanttobesupermvp.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import com.hk.iwanttobesupermvp.databinding.ActivitySignInBinding
 import com.hk.iwanttobesupermvp.domain.User
 import com.hk.iwanttobesupermvp.presenter.signin.SignInPresenter
 import com.hk.iwanttobesupermvp.util.shortToast
-import com.hk.iwanttobesupermvp.view.activity.contract.SignUpActivityContract
+import com.hk.iwanttobesupermvp.ui.activity.contract.SignUpActivityContract
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

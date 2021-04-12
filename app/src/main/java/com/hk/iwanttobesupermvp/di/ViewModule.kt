@@ -1,8 +1,8 @@
 package com.hk.iwanttobesupermvp.di
 
 import android.app.Activity
-import com.hk.iwanttobesupermvp.view.activity.SignInActivity
-import com.hk.iwanttobesupermvp.view.activity.SignUpActivity
+import com.hk.iwanttobesupermvp.ui.activity.SignInActivity
+import com.hk.iwanttobesupermvp.ui.activity.SignUpActivity
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

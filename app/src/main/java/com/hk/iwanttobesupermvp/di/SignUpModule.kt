@@ -3,7 +3,7 @@ package com.hk.iwanttobesupermvp.di
 import com.hk.iwanttobesupermvp.contract.signup.SignUpContract
 import com.hk.iwanttobesupermvp.model.SignUpModel
 import com.hk.iwanttobesupermvp.presenter.signup.SignUpPresenter
-import com.hk.iwanttobesupermvp.view.activity.SignUpActivity
+import com.hk.iwanttobesupermvp.ui.activity.SignUpActivity
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
