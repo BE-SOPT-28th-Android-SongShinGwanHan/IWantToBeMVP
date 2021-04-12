@@ -1,11 +1,11 @@
-package com.hk.iwanttobesupermvp.sqlite.databasehelper
+package com.hk.iwanttobesupermvp.api.local.sqlite.databasehelper
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.hk.iwanttobesupermvp.sqlite.entity.DatabaseUser
+import com.hk.iwanttobesupermvp.api.local.sqlite.entity.DatabaseUser
 import com.hk.iwanttobesupermvp.util.TestKeyStore
 
 class TestDbHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :

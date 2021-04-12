@@ -4,13 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.hk.iwanttobesupermvp.contract.signin.SignInContract
+import com.hk.iwanttobesupermvp.databinding.ActivitySignInBinding
 import com.hk.iwanttobesupermvp.domain.User
 import com.hk.iwanttobesupermvp.model.SignInModel
 import com.hk.iwanttobesupermvp.presenter.signin.SignInPresenter
 import com.hk.iwanttobesupermvp.util.shortToast
 import com.hk.iwanttobesupermvp.view.activity.contract.SignUpActivityContract
-import com.hk.iwanttobesupermvp.databinding.ActivitySignInBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
 
     private lateinit var binding: ActivitySignInBinding

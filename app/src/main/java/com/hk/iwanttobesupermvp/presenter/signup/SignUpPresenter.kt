@@ -1,11 +1,12 @@
 package com.hk.iwanttobesupermvp.presenter.signup
 
 import android.content.Context
+import com.hk.iwanttobesupermvp.api.local.sqlite.databasehelper.TestDbHelper
 import com.hk.iwanttobesupermvp.contract.signup.SignUpContract
-import com.hk.iwanttobesupermvp.sqlite.databasehelper.TestDbHelper
 import com.hk.iwanttobesupermvp.domain.asDatabaseUser
+import javax.inject.Inject
 
-class SignUpPresenter(
+class SignUpPresenter @Inject constructor(
     private var signUpView: SignUpContract.SignUpView?,
     private val signUpModel: SignUpContract.SignUpModel
 ) : SignUpContract.SignUpPresenter {

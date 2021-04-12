@@ -1,4 +1,4 @@
-package com.hk.iwanttobesupermvp
+package com.hk.iwanttobesupermvp.application
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

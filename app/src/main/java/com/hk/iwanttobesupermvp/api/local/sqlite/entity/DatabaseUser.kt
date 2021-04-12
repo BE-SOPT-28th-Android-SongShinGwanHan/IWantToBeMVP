@@ -1,4 +1,4 @@
-package com.hk.iwanttobesupermvp.sqlite.entity
+package com.hk.iwanttobesupermvp.api.local.sqlite.entity
 
 data class DatabaseUser(
     val name: String,

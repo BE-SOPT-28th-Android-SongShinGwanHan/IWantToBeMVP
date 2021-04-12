@@ -2,8 +2,9 @@ package com.hk.iwanttobesupermvp.model
 
 import com.hk.iwanttobesupermvp.contract.signup.SignUpContract
 import com.hk.iwanttobesupermvp.domain.SignUpUser
+import javax.inject.Inject
 
-class SignUpModel : SignUpContract.SignUpModel {
+class SignUpModel @Inject constructor() : SignUpContract.SignUpModel {
 
     var signUpUser = SignUpUser("", "", "")
 

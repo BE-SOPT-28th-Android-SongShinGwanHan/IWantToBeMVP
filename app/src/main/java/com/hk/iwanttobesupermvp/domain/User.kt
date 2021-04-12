@@ -1,7 +1,7 @@
 package com.hk.iwanttobesupermvp.domain
 
 import android.os.Parcelable
-import com.hk.iwanttobesupermvp.sqlite.entity.DatabaseUser
+import com.hk.iwanttobesupermvp.api.local.sqlite.entity.DatabaseUser
 import kotlinx.parcelize.Parcelize
 
 /*data class User(
