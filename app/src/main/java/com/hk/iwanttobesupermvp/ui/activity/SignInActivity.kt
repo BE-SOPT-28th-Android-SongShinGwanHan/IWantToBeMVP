@@ -1,6 +1,5 @@
 package com.hk.iwanttobesupermvp.ui.activity
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,8 +7,8 @@ import com.hk.iwanttobesupermvp.contract.signin.SignInContract
 import com.hk.iwanttobesupermvp.databinding.ActivitySignInBinding
 import com.hk.iwanttobesupermvp.domain.User
 import com.hk.iwanttobesupermvp.presenter.signin.SignInPresenter
-import com.hk.iwanttobesupermvp.util.shortToast
 import com.hk.iwanttobesupermvp.ui.activity.contract.SignUpActivityContract
+import com.hk.iwanttobesupermvp.util.shortToast
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -67,10 +66,11 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
 }
 
 // 처음엔 재사용성 있게 좀 만들어보려 했는데, 특정 뷰에서의 값을 보내야 하는 것이 있어 멤버 확장변수로 변환함
-inline fun <reified T : Any> SignInActivity.getIntent(id : String): Intent {
-    val intent = Intent(this,T::class.java)
-    intent.putExtra("id",id)
+inline fun <reified T : Any> SignInActivity.getIntent(id: String): Intent {
+    val intent = Intent(this, T::class.java)
+    intent.putExtra("id", id)
     return intent
 }
 
-inline fun <reified T : Any> SignInActivity.startActivity(id : String) = startActivity(getIntent<T>(id))
+inline fun <reified T : Any> SignInActivity.startActivity(id: String) =
+    startActivity(getIntent<T>(id))
