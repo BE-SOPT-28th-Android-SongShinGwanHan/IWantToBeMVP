@@ -2,19 +2,19 @@ package com.hk.iwanttobesupermvp.database
 
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
-import com.hk.iwanttobesupermvp.api.local.database.TestDbHelper
+import com.hk.iwanttobesupermvp.api.local.database.SampleDbHelper
 import com.hk.iwanttobesupermvp.api.local.entity.DatabaseUser
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
 
 class DBHelperTest {
-    private lateinit var db: TestDbHelper
+    private lateinit var db: SampleDbHelper
 
     @Before
     fun createDb() {
         val context = ApplicationProvider.getApplicationContext<Context>()
-        db = TestDbHelper(context, null)
+        db = SampleDbHelper(context, null)
     }
 
     @After

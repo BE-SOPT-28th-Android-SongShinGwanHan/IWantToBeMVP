@@ -1,6 +1,6 @@
 package com.hk.iwanttobesupermvp.presenter.signup
 
-import com.hk.iwanttobesupermvp.api.local.database.TestDbHelper
+import com.hk.iwanttobesupermvp.api.local.database.SampleDbHelper
 import com.hk.iwanttobesupermvp.contract.signup.SignUpContract
 import com.hk.iwanttobesupermvp.domain.asDatabaseUser
 import javax.inject.Inject
@@ -8,7 +8,7 @@ import javax.inject.Inject
 class SignUpPresenter @Inject constructor(
     private var signUpView: SignUpContract.SignUpView,
     private val signUpModel: SignUpContract.SignUpModel,
-    private val appDatabase: TestDbHelper
+    private val appDatabase: SampleDbHelper
 ) : SignUpContract.SignUpPresenter {
     override fun onSignUpButtonClick() {
         signUpView.getSignUpUserInfo().let { signUpModel.setSignUpUserInfo(it) }

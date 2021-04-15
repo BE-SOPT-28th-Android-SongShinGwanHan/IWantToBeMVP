@@ -9,7 +9,7 @@ import android.util.Log
 import com.hk.iwanttobesupermvp.api.local.entity.DatabaseUser
 import com.hk.iwanttobesupermvp.util.TestKeyStore
 
-class TestDbHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
+class SampleDbHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     SQLiteOpenHelper(
         context,
         TestKeyStore.provideLocalDatabaseName(),

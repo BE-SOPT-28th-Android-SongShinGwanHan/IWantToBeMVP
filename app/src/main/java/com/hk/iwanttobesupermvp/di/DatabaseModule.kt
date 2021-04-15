@@ -1,7 +1,7 @@
 package com.hk.iwanttobesupermvp.di
 
 import android.content.Context
-import com.hk.iwanttobesupermvp.api.local.database.TestDbHelper
+import com.hk.iwanttobesupermvp.api.local.database.SampleDbHelper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,5 +14,5 @@ import javax.inject.Singleton
 class DatabaseModule {
     @Provides
     @Singleton
-    fun provideAppDatabase(@ApplicationContext context: Context) = TestDbHelper(context, null)
+    fun provideAppDatabase(@ApplicationContext context: Context) = SampleDbHelper(context, null)
 }
