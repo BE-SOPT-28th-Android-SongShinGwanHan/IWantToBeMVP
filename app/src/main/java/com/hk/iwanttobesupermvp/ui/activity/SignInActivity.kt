@@ -8,28 +8,24 @@ import com.hk.iwanttobesupermvp.databinding.ActivitySignInBinding
 import com.hk.iwanttobesupermvp.domain.User
 import com.hk.iwanttobesupermvp.presenter.signin.SignInPresenter
 import com.hk.iwanttobesupermvp.ui.activity.contract.SignUpActivityContract
+import com.hk.iwanttobesupermvp.util.getIntent
 import com.hk.iwanttobesupermvp.util.shortToast
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
-
     private lateinit var binding: ActivitySignInBinding
 
     @Inject
     lateinit var signInPresenter: SignInPresenter
 
-    // 다른 액티비티를 실행할때 특정 값을 가지고 시작을 해야될 경우엔 ,launcher 객체의 제네릭에 담아서
-    // 특정 값을 가지지 않아도 될 경우에는 타입추론으로 해결가능
-    private val signUpLauncher =
-        registerForActivityResult(SignUpActivityContract()) { result: User? ->
-            // 다른 액티비티로 다녀온 다음에 하고자 하는 일을 람다 코드블록으로 처리한다.
-            binding.apply {
-                signInIdEditText.setText(result?.githubId)
-                signInPasswordEditText.setText(result?.password)
-            }
+    private val signUpLauncher = registerForActivityResult(SignUpActivityContract()) { result : User? ->
+        binding.apply {
+            signInIdEditText.setText(result?.githubId)
+            signInPasswordEditText.setText(result?.password)
         }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,8 +52,7 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
     }
 
     override fun navigateToSignUpPage() {
-        val intent = Intent(this, SignUpActivity::class.java)
-        signUpLauncher.launch(intent)
+        signUpLauncher.launch(getIntent<SignUpActivity>())
     }
 
     override fun showToast(message: String) {
@@ -65,12 +60,11 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
     }
 }
 
-// 처음엔 재사용성 있게 좀 만들어보려 했는데, 특정 뷰에서의 값을 보내야 하는 것이 있어 멤버 확장변수로 변환함
-inline fun <reified T : Any> SignInActivity.getIntent(id: String): Intent {
+inline fun <reified T : Any> SignInActivity.getIntent(wantToSetId: String): Intent {
     val intent = Intent(this, T::class.java)
-    intent.putExtra("id", id)
+    intent.putExtra("id", wantToSetId)
     return intent
 }
 
-inline fun <reified T : Any> SignInActivity.startActivity(id: String) =
-    startActivity(getIntent<T>(id))
+inline fun <reified T : Any> SignInActivity.startActivity(wantToSetId: String) =
+    startActivity(getIntent<T>(wantToSetId))

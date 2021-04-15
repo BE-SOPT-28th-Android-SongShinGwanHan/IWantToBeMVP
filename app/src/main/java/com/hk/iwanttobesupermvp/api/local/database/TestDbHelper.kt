@@ -5,6 +5,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import com.hk.iwanttobesupermvp.api.local.entity.DatabaseUser
 import com.hk.iwanttobesupermvp.util.TestKeyStore
 
@@ -42,6 +43,16 @@ class TestDbHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     fun getAllUser(): Cursor? {
         val db = this.readableDatabase
         return db.rawQuery("SELECT * FROM $TABLE_NAME", null)
+    }
+
+    fun getDatabaseSize() : Int {
+        var count = 1
+        val cursor = getAllUser()
+        cursor?.moveToFirst()
+        while(cursor?.moveToNext()!!)
+            count++
+        Log.d("hello",count.toString())
+        return count
     }
 
     private fun putUser(values: ContentValues, user: DatabaseUser) {
