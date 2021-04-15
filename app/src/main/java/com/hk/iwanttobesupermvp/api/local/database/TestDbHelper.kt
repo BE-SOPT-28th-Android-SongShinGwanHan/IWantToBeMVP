@@ -45,13 +45,13 @@ class TestDbHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         return db.rawQuery("SELECT * FROM $TABLE_NAME", null)
     }
 
-    fun getDatabaseSize() : Int {
+    fun getDatabaseSize(): Int {
         var count = 1
         val cursor = getAllUser()
         cursor?.moveToFirst()
-        while(cursor?.moveToNext()!!)
+        while (cursor?.moveToNext()!!)
             count++
-        Log.d("hello",count.toString())
+        Log.d("hello", count.toString())
         return count
     }
 

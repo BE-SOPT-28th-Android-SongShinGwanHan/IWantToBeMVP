@@ -20,12 +20,13 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
     @Inject
     lateinit var signInPresenter: SignInPresenter
 
-    private val signUpLauncher = registerForActivityResult(SignUpActivityContract()) { result : User? ->
-        binding.apply {
-            signInIdEditText.setText(result?.githubId)
-            signInPasswordEditText.setText(result?.password)
+    private val signUpLauncher =
+        registerForActivityResult(SignUpActivityContract()) { result: User? ->
+            binding.apply {
+                signInIdEditText.setText(result?.githubId)
+                signInPasswordEditText.setText(result?.password)
+            }
         }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

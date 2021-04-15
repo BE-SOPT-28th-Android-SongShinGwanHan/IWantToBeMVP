@@ -3,6 +3,10 @@ buildscript {
     ext.kotlin_version = "1.4.32"
     ext{
         version_material_design = "1.2.1"
+        version_retrofit = "2.9.0"
+        version_gson = "2.8.6"
+        version_glide = "4.11.0"
+        version_coroutine = "1.4.0"
     }
     repositories {
         google()
