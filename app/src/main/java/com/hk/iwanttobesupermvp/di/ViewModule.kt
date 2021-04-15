@@ -1,6 +1,7 @@
 package com.hk.iwanttobesupermvp.di
 
 import android.app.Activity
+import com.hk.iwanttobesupermvp.ui.activity.HomeActivity
 import com.hk.iwanttobesupermvp.ui.activity.SignInActivity
 import com.hk.iwanttobesupermvp.ui.activity.SignUpActivity
 import dagger.Module
@@ -16,4 +17,7 @@ object ViewModule {
 
     @Provides
     fun provideSignInActivity(activity: Activity): SignInActivity = activity as SignInActivity
+
+    @Provides
+    fun provideHomeActivity(activity: Activity) : HomeActivity = activity as HomeActivity
 }
