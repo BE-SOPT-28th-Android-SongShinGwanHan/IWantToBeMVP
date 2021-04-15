@@ -1,5 +1,6 @@
 package com.hk.iwanttobesupermvp.ui.activity
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -50,9 +51,8 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
     )
 
     override fun navigateToHome() {
-        val intent = Intent(this, HomeActivity::class.java)
-        intent.putExtra("id", binding.signInIdEditText.text.toString())
-        startActivity(intent)
+        getIntent<HomeActivity>(binding.signInIdEditText.text.toString())
+        startActivity<HomeActivity>(binding.signInIdEditText.text.toString())
         finish()
     }
 
@@ -65,3 +65,12 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
         shortToast(message)
     }
 }
+
+// 처음엔 재사용성 있게 좀 만들어보려 했는데, 특정 뷰에서의 값을 보내야 하는 것이 있어 멤버 확장변수로 변환함
+inline fun <reified T : Any> SignInActivity.getIntent(id : String): Intent {
+    val intent = Intent(this,T::class.java)
+    intent.putExtra("id",id)
+    return intent
+}
+
+inline fun <reified T : Any> SignInActivity.startActivity(id : String) = startActivity(getIntent<T>(id))
