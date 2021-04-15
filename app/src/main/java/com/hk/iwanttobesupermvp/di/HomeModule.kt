@@ -1,6 +1,5 @@
 package com.hk.iwanttobesupermvp.di
 
-import android.app.Activity
 import com.hk.iwanttobesupermvp.contract.home.HomeContract
 import com.hk.iwanttobesupermvp.model.HomeModel
 import com.hk.iwanttobesupermvp.presenter.home.HomePresenter
@@ -14,11 +13,11 @@ import dagger.hilt.android.components.ActivityComponent
 @Module
 abstract class HomeModule {
     @Binds
-    abstract fun bindActivity(activity : HomeActivity) : HomeContract.HomeView
+    abstract fun bindActivity(activity: HomeActivity): HomeContract.HomeView
 
     @Binds
-    abstract fun bindModel(model : HomeModel) : HomeContract.HomeModel
+    abstract fun bindModel(model: HomeModel): HomeContract.HomeModel
 
     @Binds
-    abstract fun bindPresenter(presenter : HomePresenter) : HomeContract.HomePresenter
+    abstract fun bindPresenter(presenter: HomePresenter): HomeContract.HomePresenter
 }

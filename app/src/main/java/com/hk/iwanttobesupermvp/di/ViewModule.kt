@@ -19,5 +19,5 @@ object ViewModule {
     fun provideSignInActivity(activity: Activity): SignInActivity = activity as SignInActivity
 
     @Provides
-    fun provideHomeActivity(activity: Activity) : HomeActivity = activity as HomeActivity
+    fun provideHomeActivity(activity: Activity): HomeActivity = activity as HomeActivity
 }
