@@ -18,7 +18,7 @@ class GithubRepositoryAdapter :
     }
 
     override fun onBindViewHolder(holder: GithubRepositoryViewHolder, position: Int) {
-        holder.bindWithNormal(mockRepositoryList[position])
+        holder.bindWithDataBinding(mockRepositoryList[position])
     }
 
     override fun getItemCount(): Int = mockRepositoryList.size
