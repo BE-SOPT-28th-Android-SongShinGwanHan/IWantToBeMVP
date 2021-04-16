@@ -20,7 +20,15 @@ object BindingAdapter {
         // view는 뭐 버튼이나 그런 것들
         // listener는 이제 databinding으로 올 presenter의 행동
         // 안되는거 같은데 잠시
-        Observable.create { _: ObservableEmitter<OnRxClickListener> -> }
+        Observable.create { emitter : ObservableEmitter<OnRxClickListener> ->
+            view.setOnClickListener{
+                if(!emitter.isDisposed){
+                    emitter.onNext {
+                        listener.onClick(it)
+                    }
+                }
+            }
+        }
             .debounce(2000L, TimeUnit.MILLISECONDS)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -28,9 +36,6 @@ object BindingAdapter {
                 override fun onSubscribe(d: Disposable) {
                 }
                 override fun onNext(t: OnRxClickListener) {
-                    view.setOnClickListener {
-                        listener.onClick(it)
-                    }
                     view.run(t)
                 }
                 override fun onError(e: Throwable) {}
