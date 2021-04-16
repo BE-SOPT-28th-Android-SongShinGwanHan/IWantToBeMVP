@@ -7,6 +7,7 @@ import com.hk.iwanttobesupermvp.contract.activity.home.HomeContract
 import com.hk.iwanttobesupermvp.databinding.ActivityHomeBinding
 import com.hk.iwanttobesupermvp.presenter.home.HomePresenter
 import com.hk.iwanttobesupermvp.ui.fragment.GithubRepositoryFragment
+import com.hk.iwanttobesupermvp.util.setOnDebounceClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -23,7 +24,7 @@ class HomeActivity @Inject constructor() : AppCompatActivity(), HomeContract.Hom
         setContentView(binding.root)
         initializeView()
 
-        binding.homeMoreButton.setOnClickListener {
+        binding.homeMoreButton.setOnDebounceClickListener {
             homePresenter.onHomeMoreButtonClick()
         }
     }

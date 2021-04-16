@@ -14,7 +14,7 @@ class GithubRepositoryPresenter @Inject constructor(
     private val githubRepositoryModel: GithubRepositoryFragmentContract.GithubRepositoryModel,
     private val mockRepository: MockRepository
 ) : GithubRepositoryFragmentContract.GithubRepositoryPresenter {
-    override fun fetchMockData() {
+    override fun fetchMockDataWithCall() {
         mockRepository.fetchMockDataWithCall().enqueue(object : Callback<List<MockDataDTO>> {
             override fun onResponse(
                 call: Call<List<MockDataDTO>>,

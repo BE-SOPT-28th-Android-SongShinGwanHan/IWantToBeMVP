@@ -18,7 +18,7 @@ interface GithubRepositoryFragmentContract {
     }
 
     interface GithubRepositoryPresenter {
-        fun fetchMockData()
+        fun fetchMockDataWithCall()
 
         fun setRecyclerView()
 
