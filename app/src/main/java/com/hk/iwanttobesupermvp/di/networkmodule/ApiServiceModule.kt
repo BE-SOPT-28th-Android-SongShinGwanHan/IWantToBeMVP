@@ -20,6 +20,6 @@ class ApiServiceModule {
 
     @Provides
     @Singleton
-    fun provideRxMockService(@Named(RetrofitModule.RXJAVA_RETROFIT)retrofit : Retrofit) : RxMockService =
+    fun provideRxMockService(@Named(RetrofitModule.RXJAVA_RETROFIT) retrofit: Retrofit): RxMockService =
         retrofit.create(RxMockService::class.java)
 }

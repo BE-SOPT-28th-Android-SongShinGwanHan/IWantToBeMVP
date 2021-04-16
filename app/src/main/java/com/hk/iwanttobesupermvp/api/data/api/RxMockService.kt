@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface RxMockService {
     @GET("users")
-    fun getUsersWithFromFuture() : Observable<List<MockDataDTO>>
+    fun getUsersWithFromFuture(): Observable<List<MockDataDTO>>
 }

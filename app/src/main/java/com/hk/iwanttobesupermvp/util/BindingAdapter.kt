@@ -1,6 +1,5 @@
 package com.hk.iwanttobesupermvp.util
 
-import android.annotation.SuppressLint
 import android.view.View
 import androidx.databinding.BindingAdapter
 import io.reactivex.Observable
@@ -33,7 +32,8 @@ object BindingAdapter {
 
                 override fun onError(e: Throwable) {}
 
-                override fun onComplete() {}
+                override fun onComplete() {
+                }
             })
     }
 }

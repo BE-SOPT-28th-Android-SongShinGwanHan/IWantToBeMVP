@@ -1,6 +1,5 @@
 package com.hk.iwanttobesupermvp.contract.fragment.githubrepository
 
-import androidx.lifecycle.MutableLiveData
 import com.hk.iwanttobesupermvp.api.data.mock.MockDataDTO
 import com.hk.iwanttobesupermvp.domain.entity.MockDataEntity
 

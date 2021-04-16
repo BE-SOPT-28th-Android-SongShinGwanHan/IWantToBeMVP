@@ -24,7 +24,7 @@ class RetrofitModule {
     @Provides
     @Singleton
     @Named(RXJAVA_RETROFIT)
-    fun provideRxRetrofit() : Retrofit =
+    fun provideRxRetrofit(): Retrofit =
         Retrofit.Builder().baseUrl(SampleKeyStore.provideMockBaseUrl())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())

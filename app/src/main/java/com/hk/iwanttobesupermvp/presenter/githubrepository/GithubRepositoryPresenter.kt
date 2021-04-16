@@ -13,7 +13,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -52,7 +51,7 @@ class GithubRepositoryPresenter @Inject constructor(
         mockRepository.fetchMockDataWithRxJava().get()
             .subscribeOn(Schedulers.io()) // 어디서 구독해서 작업하고
             .observeOn(AndroidSchedulers.mainThread()) // 어디서 값을 가져와 관찰할것인지
-            .subscribe(object : Observer<List<MockDataDTO>>{ // 구독하여 작업할 떄 어떤 작업을 할 것인지에 대한 작업 명세
+            .subscribe(object : Observer<List<MockDataDTO>> { // 구독하여 작업할 떄 어떤 작업을 할 것인지에 대한 작업 명세
                 override fun onSubscribe(d: Disposable) {}
 
                 override fun onNext(t: List<MockDataDTO>) {

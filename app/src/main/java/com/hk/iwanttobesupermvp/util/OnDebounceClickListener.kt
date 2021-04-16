@@ -19,7 +19,7 @@ import androidx.databinding.BindingAdapter
  */
 typealias OnClickListener = (View) -> Unit
 
-class OnDebounceClickListener(private val listener : OnClickListener) : View.OnClickListener {
+class OnDebounceClickListener(private val listener: OnClickListener) : View.OnClickListener {
     override fun onClick(v: View?) {
         val now = System.currentTimeMillis() // click이벤트가 들어온 순간의 시간을 저장
         if (now < lastTime + INTERVAL) return // 만약 , 순간의 시간동안에 다른 입력이 들어왔는데 그것이 lastTime + Interval보다 작다 그렇다면 반환
@@ -28,20 +28,20 @@ class OnDebounceClickListener(private val listener : OnClickListener) : View.OnC
     }
 
     companion object {
-        private const val INTERVAL : Long = 500L
-        private var lastTime : Long = 0
+        private const val INTERVAL: Long = 500L
+        private var lastTime: Long = 0
     }
 }
 
-infix fun View.setOnDebounceClickListener(listener : OnClickListener) {
-    this.setOnClickListener(OnDebounceClickListener{
+infix fun View.setOnDebounceClickListener(listener: OnClickListener) {
+    this.setOnClickListener(OnDebounceClickListener {
         it.run(listener)
     })
 }
 
 @BindingAdapter("android:onDebounceClick")
-infix fun View.setOnDebounceClickListener(listener : View.OnClickListener){
-    if(listener == null){
+infix fun View.setOnDebounceClickListener(listener: View.OnClickListener) {
+    if (listener == null) {
         this.setOnClickListener(null)
     } else {
         this.setOnClickListener(OnDebounceClickListener {
