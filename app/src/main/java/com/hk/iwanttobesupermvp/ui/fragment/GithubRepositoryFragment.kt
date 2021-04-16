@@ -1,6 +1,7 @@
 package com.hk.iwanttobesupermvp.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -58,6 +59,7 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
         githubRepositoryAdapter.apply {
             mockRepositoryList = mockDataList
             githubRepositoryAdapter.notifyDataSetChanged()
+            Log.d("Fuck","I'm Updating!!!")
         }
     }
 
