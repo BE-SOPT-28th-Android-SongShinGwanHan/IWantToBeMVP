@@ -20,6 +20,8 @@ interface GithubRepositoryFragmentContract {
     interface GithubRepositoryPresenter {
         fun fetchMockDataWithCall()
 
+        fun fetchMockDataWithCoroutine()
+
         fun setRecyclerView()
 
         fun getNetworkedData(): List<MockDataDTO>

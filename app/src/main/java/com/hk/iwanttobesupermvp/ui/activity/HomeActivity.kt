@@ -2,6 +2,7 @@ package com.hk.iwanttobesupermvp.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.hk.iwanttobesupermvp.R
 import com.hk.iwanttobesupermvp.contract.activity.home.HomeContract
 import com.hk.iwanttobesupermvp.databinding.ActivityHomeBinding
@@ -20,13 +21,10 @@ class HomeActivity @Inject constructor() : AppCompatActivity(), HomeContract.Hom
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_home)
         setContentView(binding.root)
         initializeView()
-
-        binding.homeMoreButton.setOnDebounceClickListener {
-            homePresenter.onHomeMoreButtonClick()
-        }
+        binding.homePresenter = homePresenter
     }
 
     override fun initializeView() {

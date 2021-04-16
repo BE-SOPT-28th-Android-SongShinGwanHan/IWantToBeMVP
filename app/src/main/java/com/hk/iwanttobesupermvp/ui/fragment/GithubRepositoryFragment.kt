@@ -42,7 +42,11 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
         // initialize RecyclerView
         githubRepositoryPresenter.setRecyclerView()
 
-        githubRepositoryPresenter.fetchMockDataWithCall()
+        // use retrofit2.Call and enqueue
+        /*githubRepositoryPresenter.fetchMockDataWithCall()*/
+
+        // use Coroutine
+        githubRepositoryPresenter.fetchMockDataWithCoroutine()
 
         return binding.root
     }
