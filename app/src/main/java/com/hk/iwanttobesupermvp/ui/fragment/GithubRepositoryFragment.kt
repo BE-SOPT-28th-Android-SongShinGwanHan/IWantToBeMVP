@@ -40,7 +40,7 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
         githubRepositoryAdapter = GithubRepositoryAdapter()
         githubRepositoryPresenter.setRecyclerView()
         githubRepositoryPresenter.fetchMockData()
-        githubRepositoryAdapter.notifyDataSetChanged()
+
         return binding.root
     }
 

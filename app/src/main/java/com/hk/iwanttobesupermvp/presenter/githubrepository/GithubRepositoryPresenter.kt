@@ -36,5 +36,4 @@ class GithubRepositoryPresenter @Inject constructor(
     override fun getNetworkedData() =
         githubRepositoryModel.getMockData()
 
-
 }
