@@ -1,4 +1,4 @@
-package com.hk.iwanttobesupermvp.di
+package com.hk.iwanttobesupermvp.di.repositorymodule
 
 import com.hk.iwanttobesupermvp.api.data.repository.MockRepositoryImpl
 import com.hk.iwanttobesupermvp.domain.repository.MockRepository

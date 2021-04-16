@@ -1,4 +1,4 @@
-package com.hk.iwanttobesupermvp.di
+package com.hk.iwanttobesupermvp.di.localmodule
 
 import android.content.Context
 import com.hk.iwanttobesupermvp.api.local.database.SampleDbHelper

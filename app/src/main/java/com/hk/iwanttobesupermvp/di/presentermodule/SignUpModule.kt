@@ -1,4 +1,4 @@
-package com.hk.iwanttobesupermvp.di
+package com.hk.iwanttobesupermvp.di.presentermodule
 
 import com.hk.iwanttobesupermvp.contract.signup.SignUpContract
 import com.hk.iwanttobesupermvp.model.SignUpModel

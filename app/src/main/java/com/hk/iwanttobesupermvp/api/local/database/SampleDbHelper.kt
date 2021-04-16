@@ -7,14 +7,14 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import com.hk.iwanttobesupermvp.api.local.entity.DatabaseUser
-import com.hk.iwanttobesupermvp.util.TestKeyStore
+import com.hk.iwanttobesupermvp.util.SampleKeyStore
 
 class SampleDbHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     SQLiteOpenHelper(
         context,
-        TestKeyStore.provideLocalDatabaseName(),
+        SampleKeyStore.provideLocalDatabaseName(),
         factory,
-        TestKeyStore.provideLocalDatabaseVersion()
+        SampleKeyStore.provideLocalDatabaseVersion()
     ) {
     override fun onCreate(db: SQLiteDatabase?) {
         val CREATE_PRODUCTS_TABLE = ("CREATE TABLE " +
