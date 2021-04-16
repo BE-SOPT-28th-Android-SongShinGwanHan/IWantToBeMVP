@@ -1,6 +1,6 @@
 package com.hk.iwanttobesupermvp.di.presentermodule
 
-import com.hk.iwanttobesupermvp.contract.signup.SignUpContract
+import com.hk.iwanttobesupermvp.contract.activity.signup.SignUpContract
 import com.hk.iwanttobesupermvp.model.SignUpModel
 import com.hk.iwanttobesupermvp.presenter.signup.SignUpPresenter
 import com.hk.iwanttobesupermvp.ui.activity.SignUpActivity

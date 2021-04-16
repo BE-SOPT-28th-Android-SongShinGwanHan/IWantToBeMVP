@@ -1,4 +1,4 @@
-package com.hk.iwanttobesupermvp.contract.home
+package com.hk.iwanttobesupermvp.contract.activity.home
 
 interface HomeContract {
     interface HomeView {

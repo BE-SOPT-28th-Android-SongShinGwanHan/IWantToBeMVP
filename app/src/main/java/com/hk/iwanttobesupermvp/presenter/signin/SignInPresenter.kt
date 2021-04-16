@@ -1,6 +1,6 @@
 package com.hk.iwanttobesupermvp.presenter.signin
 
-import com.hk.iwanttobesupermvp.contract.signin.SignInContract
+import com.hk.iwanttobesupermvp.contract.activity.signin.SignInContract
 import javax.inject.Inject
 
 class SignInPresenter @Inject constructor(

@@ -1,6 +1,6 @@
 package com.hk.iwanttobesupermvp.di.presentermodule
 
-import com.hk.iwanttobesupermvp.contract.home.HomeContract
+import com.hk.iwanttobesupermvp.contract.activity.home.HomeContract
 import com.hk.iwanttobesupermvp.model.HomeModel
 import com.hk.iwanttobesupermvp.presenter.home.HomePresenter
 import com.hk.iwanttobesupermvp.ui.activity.HomeActivity

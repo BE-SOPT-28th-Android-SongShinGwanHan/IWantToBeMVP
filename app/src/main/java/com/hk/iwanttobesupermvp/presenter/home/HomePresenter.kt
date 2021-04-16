@@ -1,6 +1,6 @@
 package com.hk.iwanttobesupermvp.presenter.home
 
-import com.hk.iwanttobesupermvp.contract.home.HomeContract
+import com.hk.iwanttobesupermvp.contract.activity.home.HomeContract
 import javax.inject.Inject
 
 class HomePresenter @Inject constructor(

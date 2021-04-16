@@ -1,7 +1,7 @@
 package com.hk.iwanttobesupermvp.presenter.signup
 
 import com.hk.iwanttobesupermvp.api.local.database.SampleDbHelper
-import com.hk.iwanttobesupermvp.contract.signup.SignUpContract
+import com.hk.iwanttobesupermvp.contract.activity.signup.SignUpContract
 import com.hk.iwanttobesupermvp.domain.asDatabaseUser
 import javax.inject.Inject
 

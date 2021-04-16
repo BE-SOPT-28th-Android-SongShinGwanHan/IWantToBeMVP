@@ -3,7 +3,7 @@ package com.hk.iwanttobesupermvp.ui.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.hk.iwanttobesupermvp.R
-import com.hk.iwanttobesupermvp.contract.home.HomeContract
+import com.hk.iwanttobesupermvp.contract.activity.home.HomeContract
 import com.hk.iwanttobesupermvp.databinding.ActivityHomeBinding
 import com.hk.iwanttobesupermvp.presenter.home.HomePresenter
 import com.hk.iwanttobesupermvp.ui.fragment.GithubRepositoryFragment

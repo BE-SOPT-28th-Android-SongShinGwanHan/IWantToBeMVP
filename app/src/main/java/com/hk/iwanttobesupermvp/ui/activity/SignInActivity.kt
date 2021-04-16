@@ -3,7 +3,7 @@ package com.hk.iwanttobesupermvp.ui.activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.hk.iwanttobesupermvp.contract.signin.SignInContract
+import com.hk.iwanttobesupermvp.contract.activity.signin.SignInContract
 import com.hk.iwanttobesupermvp.databinding.ActivitySignInBinding
 import com.hk.iwanttobesupermvp.domain.User
 import com.hk.iwanttobesupermvp.presenter.signin.SignInPresenter

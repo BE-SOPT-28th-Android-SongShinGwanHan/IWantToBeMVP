@@ -1,4 +1,4 @@
-package com.hk.iwanttobesupermvp.contract.signin
+package com.hk.iwanttobesupermvp.contract.activity.signin
 
 import com.hk.iwanttobesupermvp.domain.User
 

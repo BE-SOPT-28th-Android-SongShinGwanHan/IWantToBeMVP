@@ -1,6 +1,6 @@
 package com.hk.iwanttobesupermvp.model
 
-import com.hk.iwanttobesupermvp.contract.signup.SignUpContract
+import com.hk.iwanttobesupermvp.contract.activity.signup.SignUpContract
 import com.hk.iwanttobesupermvp.domain.SignUpUser
 import javax.inject.Inject
 
