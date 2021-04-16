@@ -48,6 +48,9 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
         // use Coroutine
         githubRepositoryPresenter.fetchMockDataWithCoroutine()
 
+        // use RxJava
+        /*githubRepositoryPresenter.fetchMockDataWithRxJava()*/
+
         return binding.root
     }
 

@@ -22,6 +22,8 @@ interface GithubRepositoryFragmentContract {
 
         fun fetchMockDataWithCoroutine()
 
+        fun fetchMockDataWithRxJava()
+
         fun setRecyclerView()
 
         fun getNetworkedData(): List<MockDataDTO>

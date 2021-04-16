@@ -6,7 +6,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Named
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -18,4 +20,17 @@ class RetrofitModule {
         Retrofit.Builder().baseUrl(SampleKeyStore.provideMockBaseUrl())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+
+    @Provides
+    @Singleton
+    @Named(RXJAVA_RETROFIT)
+    fun provideRxRetrofit() : Retrofit =
+        Retrofit.Builder().baseUrl(SampleKeyStore.provideMockBaseUrl())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+    companion object {
+        const val RXJAVA_RETROFIT = "RxRetrofit"
+    }
 }
