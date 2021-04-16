@@ -6,7 +6,6 @@ import com.hk.iwanttobesupermvp.api.data.mock.asMockEntityData
 import com.hk.iwanttobesupermvp.domain.entity.MockDataEntity
 import com.hk.iwanttobesupermvp.domain.repository.MockRepository
 import retrofit2.Call
-import retrofit2.Response
 import javax.inject.Inject
 
 class MockRepositoryImpl @Inject constructor(private val service: MockService) : MockRepository {

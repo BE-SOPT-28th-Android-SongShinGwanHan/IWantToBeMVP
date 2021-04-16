@@ -13,5 +13,6 @@ import javax.inject.Singleton
 class ApiServiceModule {
     @Provides
     @Singleton
-    fun provideMockService(retrofit : Retrofit) : MockService = retrofit.create(MockService::class.java)
+    fun provideMockService(retrofit: Retrofit): MockService =
+        retrofit.create(MockService::class.java)
 }

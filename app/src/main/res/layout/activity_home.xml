@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:text="@string/home_more_button_text"
         app:layout_constraintEnd_toEndOf="@id/home_image_view"
-        app:layout_constraintBottom_toBottomOf="@id/home_user_description_text"/>
+        app:layout_constraintBottom_toBottomOf="@id/home_user_description_text" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/home_fragment_container_view"
@@ -60,6 +60,6 @@
         app:layout_constraintTop_toBottomOf="@id/home_user_description_text"
         app:layout_constraintStart_toStartOf="@id/home_image_view"
         app:layout_constraintEnd_toEndOf="@id/home_image_view"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

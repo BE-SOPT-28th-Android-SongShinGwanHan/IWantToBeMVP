@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeActivity @Inject constructor() : AppCompatActivity(), HomeContract.HomeView {
-    private lateinit var binding : ActivityHomeBinding
+    private lateinit var binding: ActivityHomeBinding
 
     @Inject
     lateinit var homePresenter: HomePresenter
@@ -29,7 +29,7 @@ class HomeActivity @Inject constructor() : AppCompatActivity(), HomeContract.Hom
     }
 
     override fun initializeView() {
-        intent.getStringExtra("id")?.let{
+        intent.getStringExtra("id")?.let {
             binding.homeIdSmallText.text = it
             binding.homeIdMediumText.text = it
         }
@@ -38,6 +38,6 @@ class HomeActivity @Inject constructor() : AppCompatActivity(), HomeContract.Hom
     override fun showGithubRepositoryFragment() {
         val githubRepositoryFragment = GithubRepositoryFragment()
         val transAction = supportFragmentManager.beginTransaction()
-        transAction.replace(R.id.home_fragment_container_view,githubRepositoryFragment).commit()
+        transAction.replace(R.id.home_fragment_container_view, githubRepositoryFragment).commit()
     }
 }

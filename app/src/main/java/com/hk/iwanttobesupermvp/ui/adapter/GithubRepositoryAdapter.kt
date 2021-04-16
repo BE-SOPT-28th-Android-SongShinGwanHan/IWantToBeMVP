@@ -26,7 +26,7 @@ class GithubRepositoryAdapter :
     class GithubRepositoryViewHolder(
         private val binding: ItemGithubRepositoryBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bindWithNormal(mockData : MockDataEntity) {
+        fun bindWithNormal(mockData: MockDataEntity) {
             binding.apply {
                 itemRepositoryName.text = mockData.repositoryName
                 itemRepositoryDescription.text = mockData.repositoryDescription
@@ -34,7 +34,7 @@ class GithubRepositoryAdapter :
             }
         }
 
-        fun bindWithDataBinding(mockData : MockDataEntity) {
+        fun bindWithDataBinding(mockData: MockDataEntity) {
             binding.mockData = mockData
         }
     }

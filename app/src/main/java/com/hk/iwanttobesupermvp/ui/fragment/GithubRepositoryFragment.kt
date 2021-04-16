@@ -1,8 +1,6 @@
 package com.hk.iwanttobesupermvp.ui.fragment
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hk.iwanttobesupermvp.R
-import com.hk.iwanttobesupermvp.api.data.mock.asMockEntityData
 import com.hk.iwanttobesupermvp.contract.fragment.githubrepository.GithubRepositoryFragmentContract
 import com.hk.iwanttobesupermvp.databinding.FragmentGithubRepositoryBinding
 import com.hk.iwanttobesupermvp.domain.entity.MockDataEntity
@@ -50,7 +47,7 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
     override fun setMockAdapter(mockDataList: MutableList<MockDataEntity>) {
         githubRepositoryAdapter.apply {
             mockRepositoryList = mockDataList
-            notifyDataSetChanged()
+            githubRepositoryAdapter.notifyDataSetChanged()
         }
     }
 

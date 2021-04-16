@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="mockData"
             type="com.hk.iwanttobesupermvp.domain.entity.MockDataEntity" />
@@ -24,7 +25,7 @@
             android:text="@{mockData.repositoryName}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="레포지터리 이름"/>
+            tools:text="레포지터리 이름" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/item_repository_description"
@@ -34,17 +35,19 @@
             android:text="@{mockData.repositoryDescription}"
             app:layout_constraintStart_toStartOf="@id/item_repository_name"
             app:layout_constraintTop_toBottomOf="@id/item_repository_name"
-            tools:text="레포지터리 설명"/>
+            tools:text="레포지터리 설명" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/item_repository_co_language"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:maxLines="2"
+            android:ellipsize="end"
             android:text="@{mockData.userLanguage}"
             app:layout_constraintStart_toStartOf="@id/item_repository_name"
             app:layout_constraintTop_toBottomOf="@id/item_repository_description"
-            tools:text="언어"/>
+            tools:text="언어" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

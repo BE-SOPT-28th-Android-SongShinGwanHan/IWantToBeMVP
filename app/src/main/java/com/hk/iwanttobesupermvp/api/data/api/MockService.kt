@@ -2,7 +2,6 @@ package com.hk.iwanttobesupermvp.api.data.api
 
 import com.hk.iwanttobesupermvp.api.data.mock.MockDataDTO
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.http.GET
 
 interface MockService {
@@ -11,5 +10,5 @@ interface MockService {
     suspend fun getUsersWithCoroutine(): List<MockDataDTO>
 
     @GET("users")
-    fun getUsersWithCall() : Call<List<MockDataDTO>>
+    fun getUsersWithCall(): Call<List<MockDataDTO>>
 }
