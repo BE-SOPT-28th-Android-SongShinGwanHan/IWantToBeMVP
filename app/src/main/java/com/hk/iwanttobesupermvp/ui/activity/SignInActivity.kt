@@ -61,11 +61,15 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
     }
 }
 
-inline fun <reified T : Any> SignInActivity.getIntent(wantToSetId: String): Intent {
+inline fun <reified T : Any> SignInActivity.getIntent(
+    wantToSetId: String
+): Intent {
     val intent = Intent(this, T::class.java)
     intent.putExtra("id", wantToSetId)
     return intent
 }
 
-inline fun <reified T : Any> SignInActivity.startActivity(wantToSetId: String) =
+inline fun <reified T : Any> SignInActivity.startActivity(
+    wantToSetId: String
+) =
     startActivity(getIntent<T>(wantToSetId))
