@@ -1,9 +1,11 @@
 package com.hk.iwanttobesupermvp.di
 
 import android.app.Activity
+import androidx.fragment.app.Fragment
 import com.hk.iwanttobesupermvp.ui.activity.HomeActivity
 import com.hk.iwanttobesupermvp.ui.activity.SignInActivity
 import com.hk.iwanttobesupermvp.ui.activity.SignUpActivity
+import com.hk.iwanttobesupermvp.ui.fragment.GithubRepositoryFragment
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

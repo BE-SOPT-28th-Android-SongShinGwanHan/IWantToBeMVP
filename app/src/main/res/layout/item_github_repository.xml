@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mockData"
+            type="com.hk.iwanttobesupermvp.domain.entity.MockDataEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/item_repository_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@{mockData.repositoryName}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="레포지터리 이름"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/item_repository_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{mockData.repositoryDescription}"
+            app:layout_constraintStart_toStartOf="@id/item_repository_name"
+            app:layout_constraintTop_toBottomOf="@id/item_repository_name"
+            tools:text="레포지터리 설명"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/item_repository_co_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@{mockData.userLanguage}"
+            app:layout_constraintStart_toStartOf="@id/item_repository_name"
+            app:layout_constraintTop_toBottomOf="@id/item_repository_description"
+            tools:text="언어"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
