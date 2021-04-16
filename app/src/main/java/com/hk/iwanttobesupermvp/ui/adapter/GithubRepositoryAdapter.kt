@@ -9,7 +9,7 @@ import com.hk.iwanttobesupermvp.domain.entity.MockDataEntity
 class GithubRepositoryAdapter :
     RecyclerView.Adapter<GithubRepositoryAdapter.GithubRepositoryViewHolder>() {
 
-    val mockRepositoryList = mutableListOf<MockDataEntity>()
+    var mockRepositoryList = mutableListOf<MockDataEntity>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GithubRepositoryViewHolder {
         val binding =

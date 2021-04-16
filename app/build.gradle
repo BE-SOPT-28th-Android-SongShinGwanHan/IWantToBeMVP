@@ -83,4 +83,7 @@ dependencies {
     // coroutine
     //noinspection GradleDependency
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_coroutine"
+
+    // liveData
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
 }
