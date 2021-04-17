@@ -39,7 +39,6 @@ class GithubRepositoryPresenter @Inject constructor(
     }
 
     override fun fetchMockDataWithCoroutine() {
-        // 왜 코루틴은 uiScope에서 작업을 해도 되는지에 대한 것이 중요한 점입니다.
         val job = Job()
         val uiScope = CoroutineScope(Dispatchers.Main + job)
         uiScope.launch {
@@ -49,9 +48,9 @@ class GithubRepositoryPresenter @Inject constructor(
 
     override fun fetchMockDataWithRxJava() {
         mockRepository.fetchMockDataWithRxJava().get()
-            .subscribeOn(Schedulers.io()) // 어디서 구독해서 작업하고
-            .observeOn(AndroidSchedulers.mainThread()) // 어디서 값을 가져와 관찰할것인지
-            .subscribe(object : Observer<List<MockDataDTO>> { // 구독하여 작업할 떄 어떤 작업을 할 것인지에 대한 작업 명세
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : Observer<List<MockDataDTO>> {
                 override fun onSubscribe(d: Disposable) {}
 
                 override fun onNext(t: List<MockDataDTO>) {

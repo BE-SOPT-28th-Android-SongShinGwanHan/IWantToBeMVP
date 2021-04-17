@@ -16,7 +16,6 @@ object BindingAdapter {
     @JvmStatic
     @BindingAdapter("android:setOnRxDebounce")
     fun setOnRxDebounce(view: View, listener: View.OnClickListener) {
-        // observable로 방출해야 될 것은 debounce되고자 하는 그 행동 , 함수를 반환하고 싶은 것이다.
         Observable.create { emitter : ObservableEmitter<OnRxClickListener> ->
             view.setOnClickListener{
                 if(!emitter.isDisposed){

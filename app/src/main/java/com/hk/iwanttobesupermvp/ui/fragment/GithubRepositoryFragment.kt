@@ -38,9 +38,7 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
             container,
             false
         )
-        // initialize Adapter
         githubRepositoryAdapter = GithubRepositoryAdapter()
-        // initialize RecyclerView
         githubRepositoryPresenter.setRecyclerView()
 
         // use retrofit2.Call and enqueue

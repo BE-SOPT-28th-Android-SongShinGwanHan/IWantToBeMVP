@@ -23,7 +23,6 @@ class SignUpActivity : AppCompatActivity(), SignUpContract.SignUpView {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        /*signUpPresenter = SignUpPresenter(this, SignUpModel())*/
 
         binding.signUpButton.setOnClickListener {
             signUpPresenter.onSignUpButtonClick()
@@ -38,8 +37,8 @@ class SignUpActivity : AppCompatActivity(), SignUpContract.SignUpView {
 
     override fun navigateToSignInPage() {
         setResult(
-            RESULT_OK, // resultCode
-            Intent().apply { // Intent
+            RESULT_OK,
+            Intent().apply {
                 putExtra(
                     "SignedUser",
                     User(
