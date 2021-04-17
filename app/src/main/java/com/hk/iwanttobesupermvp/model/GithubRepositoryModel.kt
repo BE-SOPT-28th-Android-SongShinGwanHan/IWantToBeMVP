@@ -1,6 +1,5 @@
 package com.hk.iwanttobesupermvp.model
 
-import androidx.lifecycle.MutableLiveData
 import com.hk.iwanttobesupermvp.api.data.mock.MockDataDTO
 import com.hk.iwanttobesupermvp.contract.fragment.githubrepository.GithubRepositoryFragmentContract
 import javax.inject.Inject

@@ -1,8 +1,13 @@
 package com.hk.iwanttobesupermvp.ui.activity
 
 import android.content.Intent
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
+import android.view.animation.AnimationUtils
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.hk.iwanttobesupermvp.R
 import com.hk.iwanttobesupermvp.contract.activity.signin.SignInContract
 import com.hk.iwanttobesupermvp.databinding.ActivitySignInBinding
 import com.hk.iwanttobesupermvp.domain.User
@@ -58,6 +63,14 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
 
     override fun showToast(message: String) {
         shortToast(message)
+    }
+
+    override fun shakeEditText() {
+        val shakeAnimation = AnimationUtils.loadAnimation(this,R.anim.edittext_shake_animation)
+        binding.apply{
+            signInIdEditTextField.startAnimation(shakeAnimation)
+            signInPasswordEditTextField.startAnimation(shakeAnimation)
+        }
     }
 }
 

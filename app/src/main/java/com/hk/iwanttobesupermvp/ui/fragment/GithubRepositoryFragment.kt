@@ -57,7 +57,7 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
         githubRepositoryAdapter.apply {
             mockRepositoryList = mockDataList
             githubRepositoryAdapter.notifyDataSetChanged()
-            Log.d("Fuck","I'm Updating!!!")
+            Log.d("Fuck", "I'm Updating!!!")
         }
     }
 

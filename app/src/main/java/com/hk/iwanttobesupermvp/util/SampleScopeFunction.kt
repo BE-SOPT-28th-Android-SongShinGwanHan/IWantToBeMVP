@@ -1,9 +1,8 @@
 package com.hk.iwanttobesupermvp.util
 
-import com.hk.iwanttobesupermvp.R
-
 object SampleScopeFunction {
     // scope functions
+    // 공부자료입니다. 코드리뷰 x
     /**
      * 스코프 함수 let , apply , also , run , with 들의 원형 (이름만 앞에 sample을 붙인거지 기존의 스코프함수와 동일하게 작동)
      *
@@ -17,14 +16,14 @@ object SampleScopeFunction {
      * also : 한 객체의 초기화 외애 여러 작업을 하고 싶을 때
      *        Builder 패턴을 이용해 객체 구성하는 등의 처리 과정 중에 특정한 작업을 하려는 경우 적합
      */
-    inline fun <T,R> T.sampleLet(block : (T) -> R) : R = block(this)
+    inline fun <T, R> T.sampleLet(block: (T) -> R): R = block(this)
     // T의 형태를 받아 R의 형태로 반환을 하는 함수
     // 근데 block을 실행할때 this를 달고 갑니다
     // 이때 저 this 함수를 진행하는 T입니다.
     // 그러므로 블록이 실행되는 매개변수의 형식은 수신자 객체
     // 반환되는 것은 함수 즉 block이 됩니다.
 
-    inline fun <T> T.sampleApply(block : T.() -> Unit) : T {
+    inline fun <T> T.sampleApply(block: T.() -> Unit): T {
         block()
         return this
     }
@@ -33,7 +32,7 @@ object SampleScopeFunction {
     // block을 실행하는동안에 T의 상태가 변화되어 다시 재탄생 하는 느낌의 함수라고 생각하면 편합니다.
     // 더 좋은 말로는 T이 수신자 객체인 컨텍스트 안에서 필요한 메소드를 호출해 적용시킬 수 있다는 의미입니다.
 
-    inline fun <T> T.sampleAlso(block : (T) -> Unit) : T {
+    inline fun <T> T.sampleAlso(block: (T) -> Unit): T {
         block(this)
         return this
     }
@@ -42,6 +41,18 @@ object SampleScopeFunction {
     // also는 수신자 객체인 T를 매개변수로 끔 하여 사용하는 것입니다.
     // 즉 T의 메소드를 호출하는 것이 아닌 다른 함수를 진행하는데 T가 필요할 경우에 사용한다고 생각하면 됩니다
 
-    inline fun <T,R> T.sampleRun(block : T.() -> R) : R = block()
-    inline fun <T,R> sampleWith(receiver : T, block : T.() -> R) : R = receiver.block()
+    inline fun <T, R> T.sampleRun(block: T.() -> R): R = block()
+    inline fun <T, R> sampleWith(receiver: T, block: T.() -> R): R = receiver.block()
+
+    /**
+     * 문득 궁금해서 해보는 거
+     * 과연? inline은 얼마나 빠를까?
+     * inline 함수의 경우 10 밀리세컨드
+     * infix 함수의 경우 15 밀리세컨드로
+     * inline이 상당히 빠른것을 알 수 있다!
+     */
+    infix fun <T> T.testWiilApply(block: T.() -> Unit): T {
+        block()
+        return this
+    }
 }

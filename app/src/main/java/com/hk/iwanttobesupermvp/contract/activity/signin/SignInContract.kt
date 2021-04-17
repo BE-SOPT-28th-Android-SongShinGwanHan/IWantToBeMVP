@@ -19,6 +19,8 @@ interface SignInContract {
         fun navigateToSignUpPage()
 
         fun showToast(message: String)
+
+        fun shakeEditText()
     }
 
     interface SignInModel {

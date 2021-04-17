@@ -16,9 +16,9 @@ object BindingAdapter {
     @JvmStatic
     @BindingAdapter("android:setOnRxDebounce")
     fun setOnRxDebounce(view: View, listener: View.OnClickListener) {
-        Observable.create { emitter : ObservableEmitter<OnRxClickListener> ->
-            view.setOnClickListener{
-                if(!emitter.isDisposed){
+        Observable.create { emitter: ObservableEmitter<OnRxClickListener> ->
+            view.setOnClickListener {
+                if (!emitter.isDisposed) {
                     emitter.onNext {
                         listener.onClick(it)
                     }
@@ -31,9 +31,11 @@ object BindingAdapter {
             .subscribe(object : Observer<OnRxClickListener> {
                 override fun onSubscribe(d: Disposable) {
                 }
+
                 override fun onNext(t: OnRxClickListener) {
                     view.run(t)
                 }
+
                 override fun onError(e: Throwable) {}
 
                 override fun onComplete() {

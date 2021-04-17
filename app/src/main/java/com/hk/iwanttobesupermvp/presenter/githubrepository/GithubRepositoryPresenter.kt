@@ -29,7 +29,8 @@ class GithubRepositoryPresenter @Inject constructor(
                 call: Call<List<MockDataDTO>>,
                 response: Response<List<MockDataDTO>>
             ) {
-                response.body()?.asMockEntityData()?.let { githubRepositoryView.setGithubRepositoryAdapter(it) }
+                response.body()?.asMockEntityData()
+                    ?.let { githubRepositoryView.setGithubRepositoryAdapter(it) }
             }
 
             override fun onFailure(call: Call<List<MockDataDTO>>, t: Throwable) {
