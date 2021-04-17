@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.SignInActivity">
 
-    <ImageView
+    <com.hk.iwanttobesupermvp.view.SpringAnimationImageView
         android:id="@+id/sign_in_logo_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
