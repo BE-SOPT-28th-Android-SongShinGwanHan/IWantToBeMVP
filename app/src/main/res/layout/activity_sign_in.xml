@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.SignInActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/sign_in_id_edit_text_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="text"
+        android:hint="@string/sign_id_text"
+        app:layout_constraintVertical_bias="0.3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sign_in_id_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/sign_in_password_edit_text_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/sign_password_text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintStart_toStartOf="@id/sign_in_id_edit_text_field"
+        app:layout_constraintEnd_toEndOf="@id/sign_in_id_edit_text_field"
+        app:layout_constraintTop_toBottomOf="@id/sign_in_id_edit_text_field">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sign_in_password_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/sign_in_login_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in_button_text"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="@id/sign_in_id_edit_text_field"
+        app:layout_constraintEnd_toEndOf="@id/sign_in_id_edit_text_field"
+        app:layout_constraintTop_toBottomOf="@id/sign_in_password_edit_text_field" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/sign_in_no_user_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in_no_user_text"
+        android:layout_marginTop="48dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/sign_in_id_edit_text_field"
+        app:layout_constraintEnd_toStartOf="@id/sign_in_move_sign_up_text"
+        app:layout_constraintTop_toBottomOf="@id/sign_in_login_button" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/sign_in_move_sign_up_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up_text"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:clickable="true"
+        app:layout_constraintStart_toEndOf="@id/sign_in_no_user_text"
+        app:layout_constraintTop_toTopOf="@id/sign_in_no_user_text"
+        app:layout_constraintEnd_toEndOf="@id/sign_in_password_edit_text_field" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
