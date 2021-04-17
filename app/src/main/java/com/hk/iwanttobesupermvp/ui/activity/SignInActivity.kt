@@ -36,7 +36,6 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
             }
         }
 
-    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
