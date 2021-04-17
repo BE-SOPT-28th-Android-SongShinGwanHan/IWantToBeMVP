@@ -1,12 +1,15 @@
 package com.hk.iwanttobesupermvp.ui.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.get
 import com.hk.iwanttobesupermvp.R
 import com.hk.iwanttobesupermvp.contract.activity.signin.SignInContract
 import com.hk.iwanttobesupermvp.databinding.ActivitySignInBinding
@@ -33,6 +36,7 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
             }
         }
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
