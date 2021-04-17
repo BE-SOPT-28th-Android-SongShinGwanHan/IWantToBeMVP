@@ -7,6 +7,7 @@
     <string name="sign_up_name">이름</string>
     <string name="sign_up_button_text">SIGNUP</string>
     <string name="sign_in_no_user_text">아이디/비밀번호가 없으신가요?</string>
+    <string name="sign_in_blink">눈뽕!!!</string>
     <string name="sign_up_text"><u>회원가입</u></string>
 
     <string name="home_more_button_text">MORE</string>

@@ -1,8 +1,12 @@
 package com.hk.iwanttobesupermvp.ui.activity
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.hk.iwanttobesupermvp.R
@@ -12,6 +16,7 @@ import com.hk.iwanttobesupermvp.domain.User
 import com.hk.iwanttobesupermvp.presenter.signin.SignInPresenter
 import com.hk.iwanttobesupermvp.ui.activity.contract.SignUpActivityContract
 import com.hk.iwanttobesupermvp.util.getIntent
+import com.hk.iwanttobesupermvp.util.setOnDebounceClickListener
 import com.hk.iwanttobesupermvp.util.shortToast
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -37,11 +42,26 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setAwesomeAnimation()
         binding.signInLoginButton.setOnClickListener {
             signInPresenter.onLoginButtonClick()
         }
         binding.signInMoveSignUpText.setOnClickListener {
             signInPresenter.onSignUpTextClick()
+        }
+    }
+
+    private fun setAwesomeAnimation() {
+        binding.apply {
+            signInBlink.setOnDebounceClickListener {
+                val fadeAnimator = ObjectAnimator.ofFloat(binding.signInView, View.ALPHA,0f)
+                fadeAnimator.apply {
+                    repeatCount = 1
+                    repeatMode = ObjectAnimator.REVERSE
+                    disableViewDuringAnimation(binding.signInView)
+                    start()
+                }
+            }
         }
     }
 
@@ -88,3 +108,14 @@ inline fun <reified T : Any> SignInActivity.startActivity(
 ) =
     startActivity(getIntent<T>(wantToSetId))
 
+fun ObjectAnimator.disableViewDuringAnimation(view : View){
+    addListener(object : AnimatorListenerAdapter() {
+        override fun onAnimationStart(animation: Animator?) {
+            view.isEnabled = false
+        }
+
+        override fun onAnimationEnd(animation: Animator?) {
+            view.isEnabled = true
+        }
+    })
+}
