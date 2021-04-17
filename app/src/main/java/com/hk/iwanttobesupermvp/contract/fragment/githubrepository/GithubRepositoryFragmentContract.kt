@@ -5,7 +5,7 @@ import com.hk.iwanttobesupermvp.domain.entity.MockDataEntity
 
 interface GithubRepositoryFragmentContract {
     interface GithubRepositoryView {
-        fun setMockAdapter(mockDataList: MutableList<MockDataEntity>)
+        fun setGithubRepositoryAdapter(mockDataList: MutableList<MockDataEntity>)
 
         fun initializeRecyclerView()
     }

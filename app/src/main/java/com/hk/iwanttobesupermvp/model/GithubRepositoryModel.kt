@@ -10,11 +10,8 @@ class GithubRepositoryModel @Inject constructor() :
 
     private var mockDataList = mutableListOf<MockDataDTO>()
 
-    private val mockLiveDataList = MutableLiveData<List<MockDataDTO>>()
-
     override fun setMockData(_mockDataList: List<MockDataDTO>) {
         mockDataList = _mockDataList as MutableList<MockDataDTO>
-        mockLiveDataList.value = _mockDataList
     }
 
     override fun getMockData(): List<MockDataDTO> = mockDataList

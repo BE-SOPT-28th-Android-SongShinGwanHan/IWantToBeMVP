@@ -29,7 +29,7 @@ class GithubRepositoryPresenter @Inject constructor(
                 call: Call<List<MockDataDTO>>,
                 response: Response<List<MockDataDTO>>
             ) {
-                response.body()?.asMockEntityData()?.let { githubRepositoryView.setMockAdapter(it) }
+                response.body()?.asMockEntityData()?.let { githubRepositoryView.setGithubRepositoryAdapter(it) }
             }
 
             override fun onFailure(call: Call<List<MockDataDTO>>, t: Throwable) {
@@ -43,7 +43,7 @@ class GithubRepositoryPresenter @Inject constructor(
         val job = Job()
         val uiScope = CoroutineScope(Dispatchers.Main + job)
         uiScope.launch {
-            githubRepositoryView.setMockAdapter(mockRepository.fetchMockDataWithCoroutine() as MutableList<MockDataEntity>)
+            githubRepositoryView.setGithubRepositoryAdapter(mockRepository.fetchMockDataWithCoroutine() as MutableList<MockDataEntity>)
         }
     }
 
@@ -55,7 +55,7 @@ class GithubRepositoryPresenter @Inject constructor(
                 override fun onSubscribe(d: Disposable) {}
 
                 override fun onNext(t: List<MockDataDTO>) {
-                    githubRepositoryView.setMockAdapter(t.asMockEntityData())
+                    githubRepositoryView.setGithubRepositoryAdapter(t.asMockEntityData())
                 }
 
                 override fun onError(e: Throwable) {}
