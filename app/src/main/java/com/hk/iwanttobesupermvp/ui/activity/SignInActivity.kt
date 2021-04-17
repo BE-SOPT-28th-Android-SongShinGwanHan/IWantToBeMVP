@@ -68,8 +68,10 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
     override fun shakeEditText() {
         val shakeAnimation = AnimationUtils.loadAnimation(this,R.anim.edittext_shake_animation)
         binding.apply{
+            signInLogoView.startAnimation(shakeAnimation)
             signInIdEditTextField.startAnimation(shakeAnimation)
             signInPasswordEditTextField.startAnimation(shakeAnimation)
+            signInLoginButton.startAnimation(shakeAnimation)
         }
     }
 }
@@ -86,3 +88,4 @@ inline fun <reified T : Any> SignInActivity.startActivity(
     wantToSetId: String
 ) =
     startActivity(getIntent<T>(wantToSetId))
+

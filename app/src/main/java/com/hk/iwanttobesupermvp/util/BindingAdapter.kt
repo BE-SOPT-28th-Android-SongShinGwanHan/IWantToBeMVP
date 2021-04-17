@@ -1,7 +1,10 @@
 package com.hk.iwanttobesupermvp.util
 
 import android.view.View
+import android.widget.ImageView
 import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
+import com.hk.iwanttobesupermvp.R
 import io.reactivex.Observable
 import io.reactivex.ObservableEmitter
 import io.reactivex.Observer
