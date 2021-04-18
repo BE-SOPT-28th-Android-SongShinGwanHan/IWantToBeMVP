@@ -41,26 +41,11 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setAwesomeAnimation()
         binding.signInLoginButton.setOnClickListener {
             signInPresenter.onLoginButtonClick()
         }
         binding.signInMoveSignUpText.setOnClickListener {
             signInPresenter.onSignUpTextClick()
-        }
-    }
-
-    private fun setAwesomeAnimation() {
-        binding.apply {
-            signInBlink.setOnDebounceClickListener {
-                val fadeAnimator = ObjectAnimator.ofFloat(binding.signInView, View.ALPHA,0f)
-                fadeAnimator.apply {
-                    repeatCount = 1
-                    repeatMode = ObjectAnimator.REVERSE
-                    disableViewDuringAnimation(binding.signInView)
-                    start()
-                }
-            }
         }
     }
 
@@ -106,15 +91,3 @@ inline fun <reified T : Any> SignInActivity.startActivity(
     wantToSetId: String
 ) =
     startActivity(getIntent<T>(wantToSetId))
-
-fun ObjectAnimator.disableViewDuringAnimation(view : View){
-    addListener(object : AnimatorListenerAdapter() {
-        override fun onAnimationStart(animation: Animator?) {
-            view.isEnabled = false
-        }
-
-        override fun onAnimationEnd(animation: Animator?) {
-            view.isEnabled = true
-        }
-    })
-}
