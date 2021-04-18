@@ -16,6 +16,8 @@ import androidx.databinding.BindingAdapter
 /**
  * debounce의 개념은 event가 하나 들어왔을때 특정시간 동안 동일한 이벤트가 도달하게 된다면??
  * 그 동일한 이벤트들을 특정시간대로 한묶음시켜 하나의 이벤트가 발생한것으로 해주는 것이다.
+ *
+ * 코드리뷰 X
  */
 typealias OnClickListener = (View) -> Unit
 

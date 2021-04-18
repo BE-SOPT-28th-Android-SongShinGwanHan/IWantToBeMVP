@@ -12,4 +12,5 @@ fun Context.longToast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_LONG).show()
 }
 
+// 코드리뷰 X
 inline fun <reified T : Any> Context.getIntent() = Intent(this, T::class.java)

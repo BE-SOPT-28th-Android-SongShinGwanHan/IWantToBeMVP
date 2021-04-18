@@ -8,6 +8,7 @@ import androidx.core.view.doOnLayout
 import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce
 
+// 코드리뷰 X
 class SpringAnimationImageView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,

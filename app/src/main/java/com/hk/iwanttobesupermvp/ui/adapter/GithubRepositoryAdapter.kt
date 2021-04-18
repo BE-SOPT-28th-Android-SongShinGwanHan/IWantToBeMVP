@@ -13,6 +13,7 @@ import kotlin.reflect.KProperty
 class GithubRepositoryAdapter :
     RecyclerView.Adapter<GithubRepositoryAdapter.GithubRepositoryViewHolder>() {
 
+    // 코드리뷰 X
     var mockRepositoryList: List<MockDataEntity> by Delegates.observable(emptyList()) { _, oldValue, newValue ->
         if (oldValue != newValue) notifyDataSetChanged()
     }

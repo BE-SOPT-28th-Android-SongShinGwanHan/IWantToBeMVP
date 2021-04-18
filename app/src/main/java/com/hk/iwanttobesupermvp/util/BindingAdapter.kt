@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit
 typealias OnRxClickListener = (View) -> Unit
 
 object BindingAdapter {
+    // 코드 리뷰 X
     @JvmStatic
     @BindingAdapter("android:setOnRxDebounce")
     fun setOnRxDebounce(view: View, listener: View.OnClickListener) {

@@ -5,6 +5,7 @@ import androidx.annotation.Px
 import com.hk.iwanttobesupermvp.application.MainApplication
 import kotlin.math.roundToInt
 
+// 코드리뷰 X
 class PixelRatio(private val app: Application) {
     private val displayMetrics
         get() = app.resources.displayMetrics
