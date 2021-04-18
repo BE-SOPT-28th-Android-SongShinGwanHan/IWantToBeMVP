@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hk.iwanttobesupermvp.R
 import com.hk.iwanttobesupermvp.contract.fragment.githubrepository.GithubRepositoryFragmentContract
@@ -15,6 +16,7 @@ import com.hk.iwanttobesupermvp.databinding.FragmentGithubRepositoryBinding
 import com.hk.iwanttobesupermvp.domain.entity.MockDataEntity
 import com.hk.iwanttobesupermvp.presenter.githubrepository.GithubRepositoryPresenter
 import com.hk.iwanttobesupermvp.ui.adapter.GithubRepositoryAdapter
+import com.hk.iwanttobesupermvp.util.getItemTouchHelper
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -63,6 +65,7 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
 
     override fun initializeRecyclerView() {
         binding.fragmentGithubRepositoryRecyclerView.apply {
+            getItemTouchHelper().attachToRecyclerView(this)
             adapter = githubRepositoryAdapter
             layoutManager = LinearLayoutManager(requireContext())
             setHasFixedSize(true)

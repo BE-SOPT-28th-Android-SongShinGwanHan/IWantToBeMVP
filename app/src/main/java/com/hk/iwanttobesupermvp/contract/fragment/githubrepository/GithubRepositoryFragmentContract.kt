@@ -25,7 +25,7 @@ interface GithubRepositoryFragmentContract {
 
         fun fetchMockDataWithRxJava()
 
-        fun setRecyclerView()
+        fun setRecyclerView() //todo : 이건 행동의 이름으로 바꿔줘야지 니 맘대로 이케 적으면 되겠니? 훈기야
 
         fun getNetworkedData(): List<MockDataDTO>
 
