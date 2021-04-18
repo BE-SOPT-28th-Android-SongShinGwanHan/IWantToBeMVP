@@ -71,4 +71,8 @@ class GithubRepositoryPresenter @Inject constructor(
     override fun getNetworkedData() =
         githubRepositoryModel.getMockData()
 
+    override fun onChangeLayoutManagerButtonClick() {
+        githubRepositoryView.changeLayoutManager()
+    }
+
 }

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hk.iwanttobesupermvp.R
 import com.hk.iwanttobesupermvp.contract.fragment.githubrepository.GithubRepositoryFragmentContract
@@ -38,6 +39,7 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
             container,
             false
         )
+        binding.githubRepositoryPresenter = githubRepositoryPresenter
         githubRepositoryAdapter = GithubRepositoryAdapter()
         githubRepositoryPresenter.setRecyclerView()
 
@@ -63,6 +65,14 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
         binding.fragmentGithubRepositoryRecyclerView.apply {
             adapter = githubRepositoryAdapter
             layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
+        }
+    }
+
+    override fun changeLayoutManager() {
+        binding.fragmentGithubRepositoryRecyclerView.apply{
+            adapter = githubRepositoryAdapter
+            layoutManager = GridLayoutManager(requireContext(),2)
             setHasFixedSize(true)
         }
     }

@@ -8,6 +8,8 @@ interface GithubRepositoryFragmentContract {
         fun setGithubRepositoryAdapter(mockDataList: MutableList<MockDataEntity>)
 
         fun initializeRecyclerView()
+
+        fun changeLayoutManager()
     }
 
     interface GithubRepositoryModel {
@@ -26,5 +28,7 @@ interface GithubRepositoryFragmentContract {
         fun setRecyclerView()
 
         fun getNetworkedData(): List<MockDataDTO>
+
+        fun onChangeLayoutManagerButtonClick()
     }
 }

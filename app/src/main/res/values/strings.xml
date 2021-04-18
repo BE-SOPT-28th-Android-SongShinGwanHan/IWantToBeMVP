@@ -11,7 +11,8 @@
     <string name="sign_up_text"><u>회원가입</u></string>
 
     <string name="home_more_button_text">MORE</string>
+    <string name="home_change_layout_manager_btn_text">CHANGE</string>
 
-    <string name="home_user_descripton">도전과 창의적 사고를 즐겨하는 개발자</string>
+    <string name="home_user_descripton">초보 개발자</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
