@@ -56,7 +56,6 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
     override fun setGithubRepositoryAdapter(mockDataList: MutableList<MockDataEntity>) {
         githubRepositoryAdapter.apply {
             mockRepositoryList = mockDataList
-            githubRepositoryAdapter.notifyDataSetChanged()
         }
     }
 
@@ -64,6 +63,7 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
         binding.fragmentGithubRepositoryRecyclerView.apply {
             adapter = githubRepositoryAdapter
             layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
         }
     }
 }
