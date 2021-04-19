@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="githubRepositoryPresenter"
             type="com.hk.iwanttobesupermvp.presenter.githubrepository.GithubRepositoryPresenter" />
@@ -29,7 +30,7 @@
             android:onClick="@{() -> githubRepositoryPresenter.onChangeLayoutManagerButtonClick()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:backgroundTint="@color/teal_200"/>
+            app:backgroundTint="@color/teal_200" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

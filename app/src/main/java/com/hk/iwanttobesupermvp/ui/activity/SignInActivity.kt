@@ -1,12 +1,7 @@
 package com.hk.iwanttobesupermvp.ui.activity
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
-import android.animation.ObjectAnimator
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.hk.iwanttobesupermvp.R
@@ -16,7 +11,6 @@ import com.hk.iwanttobesupermvp.domain.User
 import com.hk.iwanttobesupermvp.presenter.signin.SignInPresenter
 import com.hk.iwanttobesupermvp.ui.activity.contract.SignUpActivityContract
 import com.hk.iwanttobesupermvp.util.getIntent
-import com.hk.iwanttobesupermvp.util.setOnDebounceClickListener
 import com.hk.iwanttobesupermvp.util.shortToast
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -69,8 +63,8 @@ class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
     }
 
     override fun shakeEditText() {
-        val shakeAnimation = AnimationUtils.loadAnimation(this,R.anim.edittext_shake_animation)
-        binding.apply{
+        val shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.edittext_shake_animation)
+        binding.apply {
             signInLogoView.startAnimation(shakeAnimation)
             signInIdEditTextField.startAnimation(shakeAnimation)
             signInPasswordEditTextField.startAnimation(shakeAnimation)

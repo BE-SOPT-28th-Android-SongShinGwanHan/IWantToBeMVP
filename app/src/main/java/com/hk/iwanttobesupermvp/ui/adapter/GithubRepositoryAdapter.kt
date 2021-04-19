@@ -1,6 +1,5 @@
 package com.hk.iwanttobesupermvp.ui.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -55,6 +54,7 @@ class GithubRepositoryAdapter :
 inline fun <T> adapterDataChangeProp(
     initialValue: T,
     crossinline onChange: (property: KProperty<*>, oldValue: T, newValue: T) -> Unit
-): ReadWriteProperty<Any?,T> = object : ObservableProperty<T>(initialValue){
-    override fun afterChange(property: KProperty<*>, oldValue: T, newValue: T) = onChange(property, oldValue, newValue)
+): ReadWriteProperty<Any?, T> = object : ObservableProperty<T>(initialValue) {
+    override fun afterChange(property: KProperty<*>, oldValue: T, newValue: T) =
+        onChange(property, oldValue, newValue)
 }
