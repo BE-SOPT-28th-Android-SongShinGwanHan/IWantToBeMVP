@@ -8,12 +8,13 @@ import com.hk.iwanttobesupermvp.contract.activity.home.HomeContract
 import com.hk.iwanttobesupermvp.databinding.ActivityHomeBinding
 import com.hk.iwanttobesupermvp.presenter.home.HomePresenter
 import com.hk.iwanttobesupermvp.ui.fragment.GithubRepositoryFragment
+import com.hk.iwanttobesupermvp.util.ActivityBindingAutoCleared
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeActivity @Inject constructor() : AppCompatActivity(), HomeContract.HomeView {
-    private lateinit var binding: ActivityHomeBinding
+    private var binding: ActivityHomeBinding by ActivityBindingAutoCleared()
 
     @Inject
     lateinit var homePresenter: HomePresenter

@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.hk.iwanttobesupermvp.contract.activity.signup.SignUpContract
+import com.hk.iwanttobesupermvp.databinding.ActivitySignInBinding
 import com.hk.iwanttobesupermvp.databinding.ActivitySignUpBinding
 import com.hk.iwanttobesupermvp.domain.SignUpUser
 import com.hk.iwanttobesupermvp.domain.User
+import com.hk.iwanttobesupermvp.util.ActivityBindingAutoCleared
 import com.hk.iwanttobesupermvp.util.shortToast
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -14,7 +16,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class SignUpActivity : AppCompatActivity(), SignUpContract.SignUpView {
 
-    private lateinit var binding: ActivitySignUpBinding
+    private var binding: ActivitySignUpBinding by ActivityBindingAutoCleared()
 
     @Inject
     lateinit var signUpPresenter: SignUpContract.SignUpPresenter

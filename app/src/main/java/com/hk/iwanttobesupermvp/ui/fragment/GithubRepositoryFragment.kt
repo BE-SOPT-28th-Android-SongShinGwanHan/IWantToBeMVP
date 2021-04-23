@@ -14,6 +14,7 @@ import com.hk.iwanttobesupermvp.databinding.FragmentGithubRepositoryBinding
 import com.hk.iwanttobesupermvp.domain.entity.MockDataEntity
 import com.hk.iwanttobesupermvp.presenter.githubrepository.GithubRepositoryPresenter
 import com.hk.iwanttobesupermvp.ui.adapter.GithubRepositoryAdapter
+import com.hk.iwanttobesupermvp.util.FragmentBindingAutoCleared
 import com.hk.iwanttobesupermvp.util.getItemTouchHelper
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -22,7 +23,7 @@ import javax.inject.Inject
 class GithubRepositoryFragment @Inject constructor() : Fragment(),
     GithubRepositoryFragmentContract.GithubRepositoryView {
 
-    private lateinit var binding: FragmentGithubRepositoryBinding
+    private var binding: FragmentGithubRepositoryBinding by FragmentBindingAutoCleared()
 
     private lateinit var githubRepositoryAdapter: GithubRepositoryAdapter
 

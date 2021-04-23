@@ -10,6 +10,7 @@ import com.hk.iwanttobesupermvp.databinding.ActivitySignInBinding
 import com.hk.iwanttobesupermvp.domain.User
 import com.hk.iwanttobesupermvp.presenter.signin.SignInPresenter
 import com.hk.iwanttobesupermvp.ui.activity.contract.SignUpActivityContract
+import com.hk.iwanttobesupermvp.util.ActivityBindingAutoCleared
 import com.hk.iwanttobesupermvp.util.getIntent
 import com.hk.iwanttobesupermvp.util.shortToast
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,7 +18,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class SignInActivity : AppCompatActivity(), SignInContract.SignInView {
-    private lateinit var binding: ActivitySignInBinding
+    private var binding: ActivitySignInBinding by ActivityBindingAutoCleared()
 
     @Inject
     lateinit var signInPresenter: SignInPresenter

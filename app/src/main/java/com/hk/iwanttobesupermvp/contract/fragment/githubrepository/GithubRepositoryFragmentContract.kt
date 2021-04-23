@@ -4,6 +4,7 @@ import com.hk.iwanttobesupermvp.api.data.mock.MockDataDTO
 import com.hk.iwanttobesupermvp.domain.entity.MockDataEntity
 
 interface GithubRepositoryFragmentContract {
+    // TODO : 이거 구조랑 함수이름은 다시 한번 생각을 해보셔야할거 같습니다 송훈기씨
     interface GithubRepositoryView {
         fun setGithubRepositoryAdapter(mockDataList: MutableList<MockDataEntity>)
 
