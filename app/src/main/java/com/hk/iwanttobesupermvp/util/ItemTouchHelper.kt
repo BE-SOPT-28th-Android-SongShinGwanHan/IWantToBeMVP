@@ -18,9 +18,7 @@ fun RecyclerView.getItemTouchHelper(): ItemTouchHelper {
             val from = viewHolder.adapterPosition
             val to = target.adapterPosition
 
-            adapter.notifyItemMoved(from, to)
-
-            return true
+            return adapter.moveItem(from,to)
         }
 
         override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {

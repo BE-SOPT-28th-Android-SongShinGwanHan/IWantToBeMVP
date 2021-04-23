@@ -14,9 +14,11 @@ class GithubRepositoryAdapter :
     RecyclerView.Adapter<GithubRepositoryAdapter.GithubRepositoryViewHolder>() {
 
     // 코드리뷰 X
-    var mockRepositoryList: List<MockDataEntity> by Delegates.observable(emptyList()) { _, oldValue, newValue ->
+    // delegate 패턴
+/*    var mockRepositoryList: MutableList<MockDataEntity> by Delegates.observable(mutableListOf()) { _, oldValue, newValue ->
         if (oldValue != newValue) notifyDataSetChanged()
-    }
+    }*/
+    var mockRepositoryList : MutableList<MockDataEntity> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GithubRepositoryViewHolder {
         val binding =
@@ -44,6 +46,20 @@ class GithubRepositoryAdapter :
         fun bindWithDataBinding(mockData: MockDataEntity) {
             binding.mockData = mockData
         }
+    }
+
+    fun moveItem(from: Int, to: Int): Boolean {
+        val tempData = mockRepositoryList[from]
+        mockRepositoryList.removeAt(from)
+        mockRepositoryList.add(to, tempData)
+        notifyItemMoved(from, to)
+        notifyItemChanged(from, to)
+        return true
+    }
+
+    fun removeItem(position: Int) {
+        mockRepositoryList.removeAt(position)
+        notifyItemRemoved(position)
     }
 }
 

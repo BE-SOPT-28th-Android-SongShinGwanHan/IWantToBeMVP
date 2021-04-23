@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.hk.iwanttobesupermvp.R
 import com.hk.iwanttobesupermvp.contract.fragment.githubrepository.GithubRepositoryFragmentContract
 import com.hk.iwanttobesupermvp.databinding.FragmentGithubRepositoryBinding
@@ -59,6 +61,7 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
     override fun setGithubRepositoryAdapter(mockDataList: MutableList<MockDataEntity>) {
         githubRepositoryAdapter.apply {
             mockRepositoryList = mockDataList
+            notifyDataSetChanged()
         }
     }
 
@@ -68,6 +71,7 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
             adapter = githubRepositoryAdapter
             layoutManager = LinearLayoutManager(requireContext())
             setHasFixedSize(true)
+            makeItemTouchHelper().attachToRecyclerView(this)
         }
     }
 
@@ -78,4 +82,36 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
             setHasFixedSize(true)
         }
     }
+
+    private fun makeItemTouchHelper() : ItemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
+        ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.START or ItemTouchHelper.END,ItemTouchHelper.START or ItemTouchHelper.END) {
+        override fun onMove(
+            recyclerView: RecyclerView,
+            viewHolder: RecyclerView.ViewHolder,
+            target: RecyclerView.ViewHolder
+        ): Boolean {
+            val from = viewHolder.adapterPosition
+            val to = target.adapterPosition
+
+            return githubRepositoryAdapter.moveItem(from,to)
+        }
+
+        override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+            githubRepositoryAdapter.removeItem(viewHolder.adapterPosition)
+        }
+
+        override fun onSelectedChanged(viewHolder: RecyclerView.ViewHolder?, actionState: Int) {
+            super.onSelectedChanged(viewHolder, actionState)
+
+            if (actionState == ItemTouchHelper.ACTION_STATE_DRAG) {
+                viewHolder?.itemView?.alpha = 0.5f
+            }
+        }
+
+        override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
+            super.clearView(recyclerView, viewHolder)
+
+            viewHolder.itemView.alpha = 1.0f
+        }
+    })
 }
