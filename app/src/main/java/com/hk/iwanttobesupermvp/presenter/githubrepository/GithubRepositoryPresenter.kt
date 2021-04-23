@@ -23,6 +23,7 @@ class GithubRepositoryPresenter @Inject constructor(
     private val githubRepositoryModel: GithubRepositoryFragmentContract.GithubRepositoryModel,
     private val mockRepository: MockRepository
 ) : GithubRepositoryFragmentContract.GithubRepositoryPresenter {
+    private var job : Job? = null
     override fun fetchMockDataWithCall() {
         mockRepository.fetchMockDataWithCall().enqueue(object : Callback<List<MockDataDTO>> {
             override fun onResponse(
@@ -40,8 +41,8 @@ class GithubRepositoryPresenter @Inject constructor(
     }
 
     override fun fetchMockDataWithCoroutine() {
-        val job = Job()
-        val uiScope = CoroutineScope(Dispatchers.Main + job)
+        job = Job()
+        val uiScope = CoroutineScope(Dispatchers.Main + job!!)
         uiScope.launch {
             githubRepositoryView.setGithubRepositoryAdapter(mockRepository.fetchMockDataWithCoroutine() as MutableList<MockDataEntity>)
         }
@@ -73,6 +74,10 @@ class GithubRepositoryPresenter @Inject constructor(
 
     override fun onChangeLayoutManagerButtonClick() {
         githubRepositoryView.changeLayoutManager()
+    }
+
+    override fun onDestroy() {
+        job = null
     }
 
 }

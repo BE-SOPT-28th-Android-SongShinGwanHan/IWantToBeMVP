@@ -58,6 +58,11 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
         return binding.root
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        githubRepositoryPresenter.onDestroy()
+    }
+
     override fun setGithubRepositoryAdapter(mockDataList: MutableList<MockDataEntity>) {
         githubRepositoryAdapter.apply {
             mockRepositoryList = mockDataList

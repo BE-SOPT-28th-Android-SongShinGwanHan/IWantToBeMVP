@@ -31,5 +31,7 @@ interface GithubRepositoryFragmentContract {
         fun getNetworkedData(): List<MockDataDTO>
 
         fun onChangeLayoutManagerButtonClick()
+
+        fun onDestroy()
     }
 }
