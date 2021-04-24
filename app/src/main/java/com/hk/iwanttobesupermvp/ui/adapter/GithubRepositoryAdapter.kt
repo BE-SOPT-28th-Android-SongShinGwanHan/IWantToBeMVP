@@ -15,10 +15,10 @@ class GithubRepositoryAdapter :
 
     // 코드리뷰 X
     // delegate 패턴
-/*    var mockRepositoryList: MutableList<MockDataEntity> by Delegates.observable(mutableListOf()) { _, oldValue, newValue ->
+    var mockRepositoryList: MutableList<MockDataEntity> by Delegates.observable(mutableListOf()) { _, oldValue, newValue ->
         if (oldValue != newValue) notifyDataSetChanged()
-    }*/
-    var mockRepositoryList : MutableList<MockDataEntity> = mutableListOf()
+    }
+    /*var mockRepositoryList : MutableList<MockDataEntity> = mutableListOf()*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GithubRepositoryViewHolder {
         val binding =
