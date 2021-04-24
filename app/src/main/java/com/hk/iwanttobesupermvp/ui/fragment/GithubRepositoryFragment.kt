@@ -66,7 +66,6 @@ class GithubRepositoryFragment @Inject constructor() : Fragment(),
     override fun setGithubRepositoryAdapter(mockDataList: MutableList<MockDataEntity>) {
         githubRepositoryAdapter.apply {
             mockRepositoryList = mockDataList
-            notifyDataSetChanged()
         }
     }
 
