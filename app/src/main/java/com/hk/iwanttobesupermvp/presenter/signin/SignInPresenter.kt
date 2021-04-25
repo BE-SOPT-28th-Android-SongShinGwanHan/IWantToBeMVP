@@ -1,6 +1,6 @@
 package com.hk.iwanttobesupermvp.presenter.signin
 
-import com.hk.iwanttobesupermvp.contract.signin.SignInContract
+import com.hk.iwanttobesupermvp.contract.activity.signin.SignInContract
 import javax.inject.Inject
 
 class SignInPresenter @Inject constructor(
@@ -12,6 +12,7 @@ class SignInPresenter @Inject constructor(
         if (signInModel.isValidate()) {
             signInView.navigateToHome()
         } else {
+            signInView.shakeEditText()
             signInView.showToast(message = "아이디 혹은 비밀번호를 입력하세요.")
         }
     }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="githubRepositoryPresenter"
+            type="com.hk.iwanttobesupermvp.presenter.githubrepository.GithubRepositoryPresenter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.fragment.GithubRepositoryFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_github_repository_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fragment_github_repository_change_layout_manager_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rotate_90_degrees_ccw_24"
+            android:layout_marginBottom="16dp"
+            android:onClick="@{() -> githubRepositoryPresenter.onChangeLayoutManagerButtonClick()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:backgroundTint="@color/teal_200" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

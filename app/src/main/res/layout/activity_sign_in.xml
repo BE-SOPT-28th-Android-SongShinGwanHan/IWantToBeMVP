@@ -2,9 +2,22 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sign_in_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activity.SignInActivity">
+
+    <com.hk.iwanttobesupermvp.view.SpringAnimationImageView
+        android:id="@+id/sign_in_logo_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/mvp_logo_nine_patch"
+        app:layout_constraintStart_toStartOf="@id/sign_in_id_edit_text_field"
+        app:layout_constraintEnd_toEndOf="@id/sign_in_id_edit_text_field"
+        app:layout_constraintBottom_toTopOf="@id/sign_in_id_edit_text_field"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/sign_in_id_edit_text_field"
@@ -50,10 +63,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/sign_in_button_text"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="96dp"
         app:layout_constraintStart_toStartOf="@id/sign_in_id_edit_text_field"
         app:layout_constraintEnd_toEndOf="@id/sign_in_id_edit_text_field"
-        app:layout_constraintTop_toBottomOf="@id/sign_in_password_edit_text_field" />
+        app:layout_constraintTop_toBottomOf="@id/sign_in_password_edit_text_field"
+        app:layout_constraintBottom_toTopOf="@id/sign_in_no_user_text" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/sign_in_no_user_text"

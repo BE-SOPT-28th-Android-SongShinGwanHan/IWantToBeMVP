@@ -12,12 +12,12 @@ data class MockDataDTO(
     val userLanguage: String
 )
 
-fun List<MockDataDTO>.asMockEntityData(): List<MockDataEntity> {
-    return this.map {
+fun List<MockDataDTO>.asMockEntityData(): MutableList<MockDataEntity> {
+    return map {
         MockDataEntity(
             repositoryName = it.repositoryName,
             repositoryDescription = it.repositoryDescription,
             userLanguage = it.userLanguage
         )
-    }
+    } as MutableList<MockDataEntity>
 }

@@ -3,10 +3,12 @@ package com.hk.iwanttobesupermvp.ui.activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.hk.iwanttobesupermvp.contract.signup.SignUpContract
+import com.hk.iwanttobesupermvp.contract.activity.signup.SignUpContract
+import com.hk.iwanttobesupermvp.databinding.ActivitySignInBinding
 import com.hk.iwanttobesupermvp.databinding.ActivitySignUpBinding
 import com.hk.iwanttobesupermvp.domain.SignUpUser
 import com.hk.iwanttobesupermvp.domain.User
+import com.hk.iwanttobesupermvp.util.ActivityBindingAutoCleared
 import com.hk.iwanttobesupermvp.util.shortToast
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -14,7 +16,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class SignUpActivity : AppCompatActivity(), SignUpContract.SignUpView {
 
-    private lateinit var binding: ActivitySignUpBinding
+    private var binding: ActivitySignUpBinding by ActivityBindingAutoCleared()
 
     @Inject
     lateinit var signUpPresenter: SignUpContract.SignUpPresenter
@@ -23,7 +25,6 @@ class SignUpActivity : AppCompatActivity(), SignUpContract.SignUpView {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        /*signUpPresenter = SignUpPresenter(this, SignUpModel())*/
 
         binding.signUpButton.setOnClickListener {
             signUpPresenter.onSignUpButtonClick()
@@ -38,8 +39,8 @@ class SignUpActivity : AppCompatActivity(), SignUpContract.SignUpView {
 
     override fun navigateToSignInPage() {
         setResult(
-            RESULT_OK, // resultCode
-            Intent().apply { // Intent
+            RESULT_OK,
+            Intent().apply {
                 putExtra(
                     "SignedUser",
                     User(
