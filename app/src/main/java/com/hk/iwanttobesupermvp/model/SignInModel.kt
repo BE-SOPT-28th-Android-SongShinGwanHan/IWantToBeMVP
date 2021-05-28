@@ -14,4 +14,8 @@ class SignInModel @Inject constructor() : SignInContract.SignInModel {
         this.user = user
     }
 
+    override fun getUserInfo(): User {
+        return user
+    }
+
 }
