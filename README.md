@@ -169,6 +169,94 @@ private fun makeItemTouchHelper() : ItemTouchHelper = ItemTouchHelper(object : I
 프라그먼트에서 주도록 하였습니다.(추후 리팩토링 할 예정)
 ```
 
+--------------------------------------------------
+
+#### 4주차 STEP
+
+```kotlin
+
+<AssignmentService>
+    @POST("login/signin")
+    fun signIn(
+        @Body requestSignIn: RequestSignIn
+    ) : Call<ResponseSignIn>
+
+    @POST("login/signup")
+    fun signUp(
+        @Body requestSignUp : RequestSignUp
+    ) : Call<ResponseSignUp>
+
+<signInPresenter>
+if (signInModel.isValidate()) {
+            authRepository.signIn(RequestSignIn(signInModel.getUserInfo().githubId,signInModel.getUserInfo().password)).enqueue(object :
+                Callback<ResponseSignIn> {
+                override fun onResponse(
+                    call: Call<ResponseSignIn>,
+                    response: Response<ResponseSignIn>
+                ) {
+                    if(response.isSuccessful)
+                        signInView.navigateToHome()
+                }
+                override fun onFailure(call: Call<ResponseSignIn>, t: Throwable) {
+                    signInView.showToast(message = t.message.toString())
+                }
+            })
+    
+<SignUpPresenter>
+     authRepository.signUp(
+                RequestSignUp(
+                    signUpModel.getSignUpUserInfo().githubId,
+                    signUpModel.getSignUpUserInfo().password,
+                    "0", signUpModel.getSignUpUserInfo().name,
+                    "010-1111-1111",
+                    "1996-08-17"
+                )
+            ).enqueue(object : Callback<ResponseSignUp> {
+                override fun onResponse(
+                    call: Call<ResponseSignUp>,
+                    response: Response<ResponseSignUp>
+                ) {
+                    if(response.isSuccessful)
+                        signUpView.navigateToSignInPage()
+                }
+                override fun onFailure(call: Call<ResponseSignUp>, t: Throwable) {
+                    signUpView.showToast("${t.message}")
+                }
+            })
+    
+간단하게 call 객체를 사용해서 회원가입과 로그인 기능을 해놓았습니다.
+
+또한 심화과제를 진행하면서 RxJava와 Coroutine을 둘다 사용해서 데이터를 받아왔는데
+<githubRepositoryPresenter>
+    override fun fetchMockDataWithCoroutine() {
+        job = Job()
+        val uiScope = CoroutineScope(Dispatchers.Main + job!!)
+        uiScope.launch {
+            githubRepositoryView.setGithubRepositoryAdapter(mockRepository.fetchMockDataWithCoroutine() as MutableList<MockDataEntity>)
+        }
+    }
+
+    override fun fetchMockDataWithRxJava() {
+        mockRepository.fetchMockDataWithRxJava().get()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : Observer<List<MockDataDTO>> {
+                override fun onSubscribe(d: Disposable) {}
+
+                override fun onNext(t: List<MockDataDTO>) {
+                    githubRepositoryView.setGithubRepositoryAdapter(t.asMockEntityData())
+                }
+
+                override fun onError(e: Throwable) {}
+
+                override fun onComplete() {}
+            })
+    }
+이처럼 처리하였습니다.
+```
+
+
+
 
 
 
