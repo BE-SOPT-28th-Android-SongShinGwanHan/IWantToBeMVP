@@ -15,4 +15,6 @@ class SignUpModel @Inject constructor() : SignUpContract.SignUpModel {
         this.signUpUser = signUpUser
     }
 
+    override fun getSignUpUserInfo(): SignUpUser = signUpUser
+
 }

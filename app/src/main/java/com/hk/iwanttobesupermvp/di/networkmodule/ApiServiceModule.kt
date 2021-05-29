@@ -1,5 +1,6 @@
 package com.hk.iwanttobesupermvp.di.networkmodule
 
+import com.hk.iwanttobesupermvp.api.data.api.AssignmentService
 import com.hk.iwanttobesupermvp.api.data.api.MockService
 import com.hk.iwanttobesupermvp.api.data.api.RxMockService
 import dagger.Module
@@ -22,4 +23,9 @@ class ApiServiceModule {
     @Singleton
     fun provideRxMockService(@Named(RetrofitModule.RXJAVA_RETROFIT) retrofit: Retrofit): RxMockService =
         retrofit.create(RxMockService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideAssignmentService(@Named(RetrofitModule.ASSIGNMENT_RETROFIT) retrofit : Retrofit) : AssignmentService =
+        retrofit.create(AssignmentService::class.java)
 }

@@ -27,6 +27,8 @@ interface SignInContract {
         fun isValidate(): Boolean
 
         fun setUserInfo(user: User)
+
+        fun getUserInfo() : User
     }
 
     interface SignInPresenter {

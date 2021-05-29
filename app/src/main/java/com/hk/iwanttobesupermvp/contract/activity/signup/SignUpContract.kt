@@ -15,6 +15,8 @@ interface SignUpContract {
         fun isValidate(): Boolean
 
         fun setSignUpUserInfo(signUpUser: SignUpUser)
+
+        fun getSignUpUserInfo() : SignUpUser
     }
 
     interface SignUpPresenter {

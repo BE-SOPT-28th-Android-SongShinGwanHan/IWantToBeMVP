@@ -30,7 +30,16 @@ class RetrofitModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
+    @Provides
+    @Singleton
+    @Named(ASSIGNMENT_RETROFIT)
+    fun provideAssignmentRetrofit() : Retrofit =
+        Retrofit.Builder().baseUrl(SampleKeyStore.provideAssignmentBaseUrl())
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
     companion object {
         const val RXJAVA_RETROFIT = "RxRetrofit"
+        const val ASSIGNMENT_RETROFIT = "AssignmentRetrofit"
     }
 }
